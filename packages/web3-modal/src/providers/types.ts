@@ -133,6 +133,11 @@ export type PstlWeb3ModalOptions<chains extends ReadonlyChains = ReadonlyChains>
      * @description appType is detected and set automtically elsewhere. Escape hatch
      */
     appType?: AppType
+    /**
+     * @name customSafeUrl
+     * @description Custom Safe URL. Useful for testing.
+     */
+    customSafeUrl?: string
   }
   /**
    * @name closeModalOnKeys

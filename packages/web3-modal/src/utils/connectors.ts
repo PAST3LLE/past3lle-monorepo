@@ -12,14 +12,15 @@ import { isLedgerDappBrowserProvider } from './iframe'
 import { connectorOverridePropSelector } from './misc'
 
 export type AppType = 'IFRAME' | 'SAFE_APP' | 'LEDGER_LIVE' | 'DAPP' | 'TEST_FRAMEWORK_IFRAME'
-export function getAppType(forcedAppType?: AppType) {
+export function getAppType(forcedAppType?: AppType, customSafeUrl?: string) {
   if (!!forcedAppType) return forcedAppType
   else if (process.env.IS_COSMOS) {
     devDebug('[@past3lle/web3-modal::getAppType] TEST_FRAMEWORK_IFRAME detected, returning connectors unaffected')
     return 'TEST_FRAMEWORK_IFRAME'
   } else if (isIframe() || isLedgerDappBrowserProvider()) {
     const isLedgerLive = isLedgerDappBrowserProvider()
-    const isSafe = window?.location.ancestorOrigins.item(0)?.includes('app.safe.global')
+    const isCustomSafe = customSafeUrl ? window?.location.ancestorOrigins.item(0)?.includes(customSafeUrl) : false
+    const isSafe = window?.location.ancestorOrigins.item(0)?.includes('app.safe.global') || isCustomSafe
     return isSafe ? 'SAFE_APP' : isLedgerLive ? 'LEDGER_LIVE' : 'IFRAME'
   } else {
     return 'DAPP'
@@ -73,7 +74,10 @@ export function getConfigFromAppType(
   }
 ): { chains: typeof configProps.chains; connectors: (CreateConnectorFn | Connector)[] } {
   const chains = hardFilterChains({ callbacks: configProps.callbacks, chains: configProps.chains })
-  const status = getAppType(configProps.options?.escapeHatches?.appType)
+  const status = getAppType(
+    configProps.options?.escapeHatches?.appType,
+    configProps.options?.escapeHatches?.customSafeUrl
+  )
   switch (status) {
     case 'SAFE_APP': {
       devDebug('[@past3lle/web3-modal] App type detected: SAFE APP')
