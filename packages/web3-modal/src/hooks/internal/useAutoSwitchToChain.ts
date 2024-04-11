@@ -19,7 +19,7 @@ async function _getChainFromUrl(
   chains: PstlWeb3ModalProps['chains'],
   config?: PstlWeb3ModalProps
 ): Promise<Chain | undefined> {
-  const status = getAppType(config?.options?.escapeHatches?.appType, config?.options?.escapeHatches?.customSafeUrl)
+  const status = getAppType(config?.options?.escapeHatches?.appType, config?.options?.customSafeUrl)
 
   switch (status) {
     case 'TEST_FRAMEWORK_IFRAME':

@@ -19,8 +19,9 @@ export function getAppType(forcedAppType?: AppType, customSafeUrl?: string) {
     return 'TEST_FRAMEWORK_IFRAME'
   } else if (isIframe() || isLedgerDappBrowserProvider()) {
     const isLedgerLive = isLedgerDappBrowserProvider()
-    const isCustomSafe = customSafeUrl ? window?.location.ancestorOrigins.item(0)?.includes(customSafeUrl) : false
-    const isSafe = window?.location.ancestorOrigins.item(0)?.includes('app.safe.global') || isCustomSafe
+    const isSafe = ['app.safe.global', customSafeUrl].some((url) =>
+      url ? window?.location.ancestorOrigins.item(0)?.includes(url) : false
+    )
     return isSafe ? 'SAFE_APP' : isLedgerLive ? 'LEDGER_LIVE' : 'IFRAME'
   } else {
     return 'DAPP'
@@ -74,10 +75,7 @@ export function getConfigFromAppType(
   }
 ): { chains: typeof configProps.chains; connectors: (CreateConnectorFn | Connector)[] } {
   const chains = hardFilterChains({ callbacks: configProps.callbacks, chains: configProps.chains })
-  const status = getAppType(
-    configProps.options?.escapeHatches?.appType,
-    configProps.options?.escapeHatches?.customSafeUrl
-  )
+  const status = getAppType(configProps.options?.escapeHatches?.appType, configProps.options?.customSafeUrl)
   switch (status) {
     case 'SAFE_APP': {
       devDebug('[@past3lle/web3-modal] App type detected: SAFE APP')

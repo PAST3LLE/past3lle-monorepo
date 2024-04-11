@@ -1,11 +1,14 @@
-import { Chain } from 'viem'
-import { Config, CreateConfigParameters, CreateConnectorFn, WagmiProviderProps } from 'wagmi'
-import { walletConnect } from 'wagmi/connectors'
+import { Chain } from 'viem';
+import { Config, CreateConfigParameters, CreateConnectorFn, WagmiProviderProps } from 'wagmi';
+import { walletConnect } from 'wagmi/connectors';
 
-import { PstlWeb3ConnectionModalProps } from '../components/modals/ConnectionModal'
-import { UserOptionsTransactionsCallbacks } from '../controllers/types'
-import { ConnectorEnhanced, ConnectorOverrides } from '../types'
-import { AppType } from '../utils/connectors'
+
+
+import { PstlWeb3ConnectionModalProps } from '../components/modals/ConnectionModal';
+import { UserOptionsTransactionsCallbacks } from '../controllers/types';
+import { ConnectorEnhanced, ConnectorOverrides } from '../types';
+import { AppType } from '../utils/connectors';
+
 
 export interface ConfigCtrlState {
   projectId: string
@@ -133,11 +136,6 @@ export type PstlWeb3ModalOptions<chains extends ReadonlyChains = ReadonlyChains>
      * @description appType is detected and set automtically elsewhere. Escape hatch
      */
     appType?: AppType
-    /**
-     * @name customSafeUrl
-     * @description Custom Safe URL. Useful for testing.
-     */
-    customSafeUrl?: string
   }
   /**
    * @name closeModalOnKeys
@@ -148,6 +146,11 @@ export type PstlWeb3ModalOptions<chains extends ReadonlyChains = ReadonlyChains>
    * @name expiremental
    * @description Map of experimental feature flags
    */
+  /**
+   * @name customSafeUrl
+   * @description Custom Safe URL. Useful for testing.
+   */
+  customSafeUrl?: string
   experimental?: {
     /**
      * @name hidDeviceOptions
