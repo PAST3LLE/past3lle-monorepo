@@ -143,6 +143,11 @@ export type PstlWeb3ModalOptions<chains extends ReadonlyChains = ReadonlyChains>
    * @name expiremental
    * @description Map of experimental feature flags
    */
+  /**
+   * @name customSafeUrl
+   * @description Custom Safe URL. Useful for testing.
+   */
+  customSafeUrl?: string
   experimental?: {
     /**
      * @name hidDeviceOptions
