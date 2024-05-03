@@ -245,7 +245,7 @@ function HidDeviceOptionsContent({ errorOptions }: PstlHidDeviceModalProps) {
               </ModalSubHeaderText>
               <HidModalTextInput
                 value={isCustomPath ? path ?? '' : ''}
-                placeholder={"m / 44' 60' / *' / 0 / 0"}
+                placeholder={"m/44'/60'/*'/0/0"}
                 minWidth={isCustomPath ? '300px' : 'min-content'}
                 fontWeight={isCustomPath ? 300 : 100}
                 onChange={(e) => {
