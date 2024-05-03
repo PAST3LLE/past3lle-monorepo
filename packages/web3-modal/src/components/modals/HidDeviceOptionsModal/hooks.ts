@@ -108,6 +108,7 @@ export function useHidModalStore({ chainId, connector, path, paginationAmount }:
           _isValidPathOrThrow(path)
           _isConnectedOrThrow(hid)
           setLoading(true)
+          const provider = await hid?.getProvider?.()
 
           const accountsAndBalances: { address: Address; balance: string | undefined }[] = []
           for (let i = paginationIdx - paginationAmount; i < paginationIdx; i++) {
@@ -116,7 +117,7 @@ export function useHidModalStore({ chainId, connector, path, paginationAmount }:
             const [acct] = (await hid?.getAccounts(replacedPath)) || []
             // We throw if no path found at derived address
             if (!acct) throw new Error('No valid account found at path: ' + replacedPath)
-            const bal = await hid?.provider?.getBalance(acct)
+            const bal = await provider?.getBalance(acct)
             accountsAndBalances.push({ address: acct, balance: bal ? formatEther(BigInt(bal.toString())) : '0' })
             continue
           }
