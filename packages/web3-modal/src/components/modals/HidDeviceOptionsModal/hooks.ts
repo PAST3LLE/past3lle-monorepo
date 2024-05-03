@@ -17,8 +17,6 @@ type Params = {
   paginationAmount: number
 }
 
-const DEFAULT_ACCOUNT_INDEX = parseFloat(localStorage.getItem(KEYS.HID_ACCOUNT_INDEX) || '0')
-
 export function useHidModalStore({ chainId, connector, path, paginationAmount }: Params) {
   const { close } = usePstlWeb3Modal()
   const {
@@ -26,7 +24,9 @@ export function useHidModalStore({ chainId, connector, path, paginationAmount }:
       error: { set: setError, reset: resetError }
     }
   } = usePstlWeb3ModalStore()
-  const [selectedAccountIdx, setSelectedAccountIdx] = useState<number>(() => DEFAULT_ACCOUNT_INDEX)
+  const [selectedAccountIdx, setSelectedAccountIdx] = useState<number>(() =>
+    parseFloat(localStorage.getItem(KEYS.HID_ACCOUNT_INDEX) || '0')
+  )
   const [accountsAndBalances, setAccountsAndBalances] = useState<{ address: string; balance: string | undefined }[]>([])
 
   const [loading, setLoading] = useState(false)

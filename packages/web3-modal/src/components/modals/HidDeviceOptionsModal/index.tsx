@@ -45,7 +45,6 @@ type PstlHidDeviceModalProps = Pick<BaseModalProps, 'errorOptions'>
 const PAGINATION_AMT = 5
 const CHAIN_IMAGE_STYLES = { width: 20, height: 20, marginLeft: 7, borderRadius: '30%' }
 
-const DEFAULT_PATH = localStorage.getItem(KEYS.HID_DERIVATION_PATH) ?? SUPPORTED_BIP_DERIVATION_PATHS[0]
 const DISABLED_SELECTOR_COLOR = 'darkgrey'
 
 function HidDeviceOptionsContent({ errorOptions }: PstlHidDeviceModalProps) {
@@ -74,7 +73,9 @@ function HidDeviceOptionsContent({ errorOptions }: PstlHidDeviceModalProps) {
   )
 
   const { connector: hidConnector } = useUserConnectionInfo()
-  const { dbPath, path, isCustomPath, ...pathCallbacks } = useHidModalPath(DEFAULT_PATH)
+  const { dbPath, path, isCustomPath, ...pathCallbacks } = useHidModalPath(
+    localStorage.getItem(KEYS.HID_DERIVATION_PATH) ?? SUPPORTED_BIP_DERIVATION_PATHS[0]
+  )
 
   const { accountsAndBalances, loading, loadedSavedConfig, paginationIdx, selectedAccountIdx, ...storeCallbacks } =
     useHidModalStore({
