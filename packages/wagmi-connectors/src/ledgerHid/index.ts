@@ -180,6 +180,7 @@ export function ledgerHid(parameters?: LedgerHidParameters) {
         const statusCode: ErrorCodes | undefined = (error as any)?.statusCode
         switch (statusCode) {
           case 27906:
+          case 28160:
             throw new Error(ERROR_MESSAGES[statusCode])
           default:
             throw error
