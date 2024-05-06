@@ -17,8 +17,6 @@ type Params = {
   paginationAmount: number
 }
 
-const DEFAULT_ACCOUNT_INDEX = parseFloat(localStorage.getItem(KEYS.HID_ACCOUNT_INDEX) || '0')
-
 export function useHidModalStore({ chainId, connector, path, paginationAmount }: Params) {
   const { close } = usePstlWeb3Modal()
   const {
@@ -26,7 +24,9 @@ export function useHidModalStore({ chainId, connector, path, paginationAmount }:
       error: { set: setError, reset: resetError }
     }
   } = usePstlWeb3ModalStore()
-  const [selectedAccountIdx, setSelectedAccountIdx] = useState<number>(() => DEFAULT_ACCOUNT_INDEX)
+  const [selectedAccountIdx, setSelectedAccountIdx] = useState<number>(() =>
+    parseFloat(localStorage.getItem(KEYS.HID_ACCOUNT_INDEX) || '0')
+  )
   const [accountsAndBalances, setAccountsAndBalances] = useState<{ address: string; balance: string | undefined }[]>([])
 
   const [loading, setLoading] = useState(false)
@@ -108,6 +108,7 @@ export function useHidModalStore({ chainId, connector, path, paginationAmount }:
           _isValidPathOrThrow(path)
           _isConnectedOrThrow(hid)
           setLoading(true)
+          const provider = await hid?.getProvider?.()
 
           const accountsAndBalances: { address: Address; balance: string | undefined }[] = []
           for (let i = paginationIdx - paginationAmount; i < paginationIdx; i++) {
@@ -116,7 +117,7 @@ export function useHidModalStore({ chainId, connector, path, paginationAmount }:
             const [acct] = (await hid?.getAccounts(replacedPath)) || []
             // We throw if no path found at derived address
             if (!acct) throw new Error('No valid account found at path: ' + replacedPath)
-            const bal = await hid?.provider?.getBalance(acct)
+            const bal = await provider?.getBalance(acct)
             accountsAndBalances.push({ address: acct, balance: bal ? formatEther(BigInt(bal.toString())) : '0' })
             continue
           }
