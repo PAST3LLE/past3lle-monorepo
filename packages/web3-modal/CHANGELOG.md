@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-alpha.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.0-alpha.0...@past3lle/web3-modal@2.3.0-alpha.1) (2024-05-06)
+
+
+### Bug Fixes
+
+* **web3-modal:** HID modal derivation and balances issues ([#91](https://github.com/PAST3LLE/past3lle-monorepo/issues/91)) ([ccb317e](https://github.com/PAST3LLE/past3lle-monorepo/commit/ccb317e428239f862e7500ea75818eb8d446e58b))
+
+
+
+
+
 # [2.3.0-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.2.0...@past3lle/web3-modal@2.3.0-alpha.0) (2024-04-12)
 
 

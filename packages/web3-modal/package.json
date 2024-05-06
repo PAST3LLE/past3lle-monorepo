@@ -1,6 +1,6 @@
 {
   "name": "@past3lle/web3-modal",
-  "version": "2.3.0-alpha.0",
+  "version": "2.3.0-alpha.1",
   "sideEffects": false,
   "description": "PAST3LLE's Web3 connection modal",
   "keywords": [
