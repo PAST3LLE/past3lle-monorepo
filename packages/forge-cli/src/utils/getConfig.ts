@@ -11,9 +11,9 @@ const DEFAULT_CONFIG: ForgeConfig = {
       id: 1,
       rpcUrl: 'https://mainnet.infura.io/v3/INSERT_INFURA_KEY_HERE'
     },
-    goerli: {
-      id: 5,
-      rpcUrl: 'https://goerli.infura.io/v3/INSERT_INFURA_KEY_HERE'
+    sepolia: {
+      id: 11155111,
+      rpcUrl: 'https://sepolia.infura.io/v3/INSERT_INFURA_KEY_HERE'
     },
     mumbai: {
       id: 80001,
@@ -97,9 +97,9 @@ export async function getConfig() {
 async function createDefaultConfigFile() {
   const configFileContent = `module.exports = {
   networks: {
-    goerli: {
-      id: 5,
-      rpcUrl: process.env.GOERLI_RPC_URL
+    sepolia: {
+      id: 11155111,
+      rpcUrl: process.env.SEPOLIA_RPC_URL
     },
     matic: {
       id: 137,

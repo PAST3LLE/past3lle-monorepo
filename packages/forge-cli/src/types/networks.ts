@@ -18,7 +18,7 @@ export type NetworksJson = {
 }
 
 export enum SupportedNetworks {
-  GOERLI = 'goerli',
+  SEPOLIA = 'sepolia',
   MAINNET = 'mainnet',
   MUMBAI = 'mumbai',
   MATIC = 'matic',
