@@ -3930,10 +3930,10 @@
     "@parcel/watcher-win32-ia32" "2.4.0"
     "@parcel/watcher-win32-x64" "2.4.0"
 
-"@past3lle/skilltree-contracts@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@past3lle/skilltree-contracts/-/skilltree-contracts-0.1.6.tgz#877394920180d8b8ed4925fdc8d3facb9f5885d5"
-  integrity sha512-WKCxW3vkUOCOAo9VdtSU4otPqpAueASdN559L6rtV2a1kktnZ9nKNzmDZPsQ/lh1nK5aYrEMZj68Qy/OgE91Ew==
+"@past3lle/skilltree-contracts@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@past3lle/skilltree-contracts/-/skilltree-contracts-0.1.7.tgz#482bbe94bab663a110689ce7f9f4d5ace5624730"
+  integrity sha512-MKwrqIMXX15FXQckAQWA7+fjLmJinW/MhVQDGsQSCPLWaD+PfwpT7NaRvcjsFHcy+k5b6YG/zBWSXYvo4E2qSg==
   dependencies:
     chai "^4.2.0"
     ethers "^6.4.0"
