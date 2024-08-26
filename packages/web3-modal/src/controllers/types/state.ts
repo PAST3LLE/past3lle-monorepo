@@ -121,7 +121,7 @@ export interface UserOptionsCtrlState {
        * @name chainImages
        * @default {
           1: 'https://swap.cow.fi/assets/network-mainnet-logo-ac64fb79.svg',
-          5: 'https://swap.cow.fi/assets/network-goerli-logo-2b81b421.svg'
+          11155111: 'https://swap.cow.fi/assets/network-sepolia-logo-2b81b421.svg'
         }
        * @description Optional. Key/value pair overriding/setting chain images by chain ID.
        */

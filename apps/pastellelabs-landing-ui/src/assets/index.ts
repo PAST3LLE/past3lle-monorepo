@@ -39,9 +39,9 @@ export const ASSETS_MAP = {
     shop: SHOP_ICON,
     chains: {
       disconnected: CONNECTION_ICON,
-      5: ETHEREUM_LOGO,
+      11155111: ETHEREUM_LOGO,
       137: POLYGON_LOGO,
-      80001: POLYGON_LOGO
+      80002: POLYGON_LOGO
     },
     rarity: {
       empty: '',

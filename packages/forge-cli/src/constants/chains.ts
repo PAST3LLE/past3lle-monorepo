@@ -5,5 +5,5 @@ export const networksToChainId: { [Network in SupportedNetworks]: number } = {
   [SupportedNetworks.SEPOLIA]: 11155111,
   [SupportedNetworks.MATIC]: 137,
   [SupportedNetworks.POLYGON]: 137,
-  [SupportedNetworks.MUMBAI]: 80001
+  [SupportedNetworks.AMOY]: 80002
 }

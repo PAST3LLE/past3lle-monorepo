@@ -41,8 +41,8 @@ export interface ForgeW3AppConfig<forgeChains extends ForgeChainsMinimum> {
    * @name contractAddresses - mapping of network IDs to deployed CollectionsManager.sol addresses
    * @example
    * contractAddresses: {
-   *  [SupportedForgeChainIds.GOERLI]: {
-   *    CollectionsManager: "0x123123123123123123_GoerliAddress"
+   *  [SupportedForgeChainIds.SEPOLIA]: {
+   *    CollectionsManager: "0x123123123123123123_SepoliaAddress"
    *  },
    * [SupportedForgeChainIds.POLYGON]: {
    *    CollectionsManager: "0x123123123123123123_PolyAddress"
@@ -55,7 +55,7 @@ export interface ForgeW3AppConfig<forgeChains extends ForgeChainsMinimum> {
    * @name metadataUris - mapping of network IDs to CollectionsManager.sol metadata
    * @example
    * metadataUris: {
-   *  [SupportedForgeChainIds.GOERLI]: "https://some.metadata.uri",
+   *  [SupportedForgeChainIds.SEPOLIA]: "https://some.metadata.uri",
    *  [SupportedForgeChainIds.POLYGON]: "https://some.polygon.metadata.uri"
    * }
    */

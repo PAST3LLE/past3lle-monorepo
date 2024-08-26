@@ -186,12 +186,12 @@ export interface Web3ModalProps<chains extends ReadonlyChains = ReadonlyChains> 
    * @name chains
    * @description Wagmi chains to allow.
    * @example 
-    import { mainnet, goerli, polygon } from 'viem/chains'
+    import { mainnet, sepolia, polygon } from 'viem/chains'
     ...
     return (
       <PstlW3Providers
         config={{
-          chains: [mainnet, goerli, polygon],
+          chains: [mainnet, sepolia, polygon],
           ...
         }}
         ...
@@ -204,9 +204,9 @@ export interface Web3ModalProps<chains extends ReadonlyChains = ReadonlyChains> 
    * @example
    * blockExplorerUris: {
    *     [ChainId.mainnet]: "https://etherscan.io",
-   *     [ChainId.goerli]: "https://goerli.etherscan.io",
+   *     [ChainId.sepolia]: "https://sepolia.etherscan.io",
    *     [ChainId.matic]: "https://polygonscan.com",
-   *     [ChainId.mumbai]: "https://mumbai.polygonscan.com"
+   *     [ChainId.amoy]: "https://amoy.polygonscan.com"
    * }
    */
   blockExplorerUris?: chains[number]['blockExplorers']
@@ -214,9 +214,9 @@ export interface Web3ModalProps<chains extends ReadonlyChains = ReadonlyChains> 
    * @name chains
    * @descriptions Required. Chains to support.
    * @example
-   * import { mainnet, goerli, matic, polygon } from 'viem/chains'
+   * import { mainnet, sepolia, matic, polygon } from 'viem/chains'
    * ...
-   * chains: [mainnet, goerli, matic, polygon]
+   * chains: [mainnet, sepolia, matic, polygon]
    */
   chains: chains
   /**

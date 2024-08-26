@@ -15,9 +15,9 @@ const DEFAULT_CONFIG: ForgeConfig = {
       id: 11155111,
       rpcUrl: 'https://sepolia.infura.io/v3/INSERT_INFURA_KEY_HERE'
     },
-    mumbai: {
-      id: 80001,
-      rpcUrl: 'https://rpc-mumbai.maticvigil.com/v1/INSERT_MATIC_VIGIL_KEY_HERE'
+    amoy: {
+      id: 80002,
+      rpcUrl: 'https://rpc-amoy.maticvigil.com/v1/INSERT_MATIC_VIGIL_KEY_HERE'
     },
     matic: {
       id: 137,
@@ -105,8 +105,8 @@ async function createDefaultConfigFile() {
       id: 137,
       rpcUrl: process.env.POLYGON_RPC_URL
     },
-    mumbai: {
-      id: 80001,
+    amoy: {
+      id: 80002,
       rpcUrl: process.env.ALCHEMY_RPC_URL
     }
   },

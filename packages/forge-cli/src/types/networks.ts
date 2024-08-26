@@ -20,7 +20,7 @@ export type NetworksJson = {
 export enum SupportedNetworks {
   SEPOLIA = 'sepolia',
   MAINNET = 'mainnet',
-  MUMBAI = 'mumbai',
+  AMOY = 'amoy',
   MATIC = 'matic',
   POLYGON = 'polygon'
 }

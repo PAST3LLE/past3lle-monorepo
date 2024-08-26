@@ -175,7 +175,7 @@ export const pstlModalTheme = createTheme({
       }
     }
   },
-  get DARK() {
+  get DARK(): any {
     return this.DEFAULT
   },
   LIGHT: {
@@ -237,7 +237,8 @@ export const COMMON_CONNECTOR_OVERRIDES = {
 
 const CHAIN_IMAGES: ChainImages = {
   // unknown: 'https://img.freepik.com/premium-vector/unknown-mysterious-logo-sports_67734-82.jpg',
-  137: 'https://icons.llamao.fi/icons/chains/rsz_polygon.jpg'
+  137: 'https://icons.llamao.fi/icons/chains/rsz_polygon.jpg',
+  80002: 'https://icons.llamao.fi/icons/chains/rsz_polygon.jpg'
 }
 
 const DEFAULT_PROPS = {
@@ -248,11 +249,11 @@ const DEFAULT_PROPS = {
   },
   options: {
     transports: {
-      5: fallback([
-        http(`https://eth-goerli.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_GOERLI_API_KEY as string}`)
+      11155111: fallback([
+        http(`https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_SEPOLIA_API_KEY as string}`)
       ]),
       137: http(`https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MATIC_API_KEY as string}`),
-      80001: http(`https://polygon-mumbai.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`)
+      80002: http(`https://polygon-amoy.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`)
     },
     autoConnect: true,
     pollingInterval: 10_000,

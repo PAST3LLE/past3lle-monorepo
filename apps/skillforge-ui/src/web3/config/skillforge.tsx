@@ -20,15 +20,15 @@ export const WEB3_PROPS_BASE = {
   clients: {
     wagmi: {
       options: {
-        // GOERLI KEY - steal it idgaf
+        // SEPOLIA KEY - steal it idgaf
         transports: {
-          5: http(`https://eth-goerli.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_GOERLI_API_KEY as string}`),
+          11155111: http(
+            `https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_SEPOLIA_API_KEY as string}`
+          ),
           137: http(
             `https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MATIC_API_KEY as string}`
           ),
-          80001: http(
-            `https://polygon-mumbai.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`
-          )
+          80002: http(`https://polygon-amoy.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`)
         }
       }
     }
@@ -59,7 +59,7 @@ export const WEB3_PROPS_BASE = {
     root: {
       chainImages: {
         [1]: 'https://cryptologos.cc/logos/versions/ethereum-eth-logo-colored.svg',
-        [5]: 'https://cryptologos.cc/logos/versions/ethereum-eth-logo-colored.svg',
+        [11155111]: 'https://cryptologos.cc/logos/versions/ethereum-eth-logo-colored.svg',
         [137]:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Polygon_Blockchain_Matic_Logo.svg/1200px-Polygon_Blockchain_Matic_Logo.svg.png'
       },
