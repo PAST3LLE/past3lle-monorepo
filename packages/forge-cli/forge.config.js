@@ -8,8 +8,8 @@ module.exports = {
       id: 137,
       rpcUrl: process.env.POLYGON_RPC_URL
     },
-    mumbai: {
-      id: 80001,
+    amoy: {
+      id: 80002,
       rpcUrl: process.env.ALCHEMY_RPC_URL
     }
   },

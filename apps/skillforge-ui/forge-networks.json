@@ -1,0 +1,33 @@
+{
+  "137": {
+    "CollectionsManager": {
+      "timestamp": "2023-12-11T23:08:50.877Z",
+      "address": "0x237B80e076cDfa4Dc4cC324B1a2f04F8E0513336",
+      "transactionHash": "0x606cdcb51e1f3adb7e90ee62fc1938f9801152d79987aec00bb6bc1e6a8b4338"
+    },
+    "Collection-1": {
+      "timestamp": "2023-12-11T23:39:12.189Z",
+      "address": "0x30bE87dc59f046865ae420566aE4975cf6Eb5f22",
+      "transactionHash": "0x2301e5c7fc67b69bec55a6ee51d2d8ac3fe5a37afacf629930bcfee3cb64d0a1"
+    },
+    "Collection-2": {
+      "timestamp": "2023-06-12T14:14:11.146Z",
+      "address": "0xa4bAfCB71a6E15421bF70110aD8Cd95e311bd770",
+      "transactionHash": "0x2ca184043acbf127e543afa9f13caf19c08feecc56ddfced00bafa06b757af39"
+    }
+  },
+  "80002": {
+    "CollectionsManager": {
+      "timestamp": "2024-08-27T22:20:21.870Z",
+      "address": "0xd4780A7aA72087D70dF240606d0ab2Fb46AE7692",
+      "transactionHash": "0x0d24d014a9a7d83a4cc8ed11ea0fd8bd2028be7cf7dbe5c181bfa98ce64dff6c"
+    }
+  },
+  "11155111": {
+    "CollectionsManager": {
+      "timestamp": "2024-08-27T15:56:15.870Z",
+      "address": "0x0824dcc3b0969c5B60F579907e26a8B50eA74f7A",
+      "transactionHash": "0x78b630fa84e0f8276a94a97ce9208cfce7588b43e1e96ff7ed8b08dfa285c1b6"
+    }
+  }
+}
