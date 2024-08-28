@@ -57,6 +57,8 @@ export const WEB3_PROPS_BASE = {
         [1]: 'https://cryptologos.cc/logos/versions/ethereum-eth-logo-colored.svg',
         [11155111]: 'https://cryptologos.cc/logos/versions/ethereum-eth-logo-colored.svg',
         [137]:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Polygon_Blockchain_Matic_Logo.svg/1200px-Polygon_Blockchain_Matic_Logo.svg.png',
+        [80002]:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Polygon_Blockchain_Matic_Logo.svg/1200px-Polygon_Blockchain_Matic_Logo.svg.png'
       },
       title: SKILLFORGE_APP_NAME + ' LOGIN',
