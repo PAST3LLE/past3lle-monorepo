@@ -1,6 +1,6 @@
 {
   "name": "@past3lle/forge-cli",
-  "version": "2.2.0-alpha.0",
+  "version": "2.2.0",
   "sideEffects": false,
   "description": "FORGE CLI tools",
   "keywords": [

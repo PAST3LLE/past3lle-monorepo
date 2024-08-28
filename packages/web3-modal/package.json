@@ -1,6 +1,6 @@
 {
   "name": "@past3lle/web3-modal",
-  "version": "2.3.0-alpha.2",
+  "version": "2.3.0",
   "sideEffects": false,
   "description": "PAST3LLE's Web3 connection modal",
   "keywords": [
@@ -90,7 +90,7 @@
     "@past3lle/hooks": "^2.1.0",
     "@past3lle/theme": "^2.1.0",
     "@past3lle/utils": "^2.1.0",
-    "@past3lle/wagmi-connectors": "^2.3.0-alpha.0",
+    "@past3lle/wagmi-connectors": "^2.3.0",
     "@safe-global/api-kit": "^2.0.0",
     "date-fns": "^3.0.0",
     "lodash.defaultsdeep": "^4.6.1",
