@@ -9,7 +9,7 @@ import { devDebug } from '@past3lle/utils'
 import { ledgerHid } from '@past3lle/wagmi-connectors'
 import { polygon, sepolia } from 'viem/chains'
 import { defineChain } from 'viem/utils'
-import { ConnectorNotFoundError, ProviderNotFoundError } from 'wagmi'
+import { ConnectorNotFoundError, ProviderNotFoundError, fallback, http } from 'wagmi'
 import { injected } from 'wagmi/connectors'
 
 // TODO: remove when viem adds amoy polygon
@@ -163,6 +163,21 @@ const WEB3_PROPS: ForgeW3CoreProvidersProps<typeof SUPPORTED_CHAINS>['config']['
       }
     }
   },
+  options: {
+    transports: {
+      11155111: fallback([
+        http(`https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_SEPOLIA_API_KEY as string}`)
+      ]),
+      137: http(`https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MATIC_API_KEY as string}`),
+      80002: http(`https://polygon-amoy.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`)
+    },
+    autoConnect: true,
+    pollingInterval: 10_000,
+    escapeHatches: {
+      appType: 'DAPP'
+    },
+    multiInjectedProviderDiscovery: false
+  },
   modals: {
     root: {
       themeConfig: {
@@ -186,7 +201,7 @@ const METADATA_URIS_AND_CONTRACTS_PROPS = {
   },
   contractAddresses: {
     [11155111]: {
-      collectionsManager: '0x00ad95f9D3E5Af8707700520FF3c45964Ef20423',
+      collectionsManager: '0x0824dcc3b0969c5B60F579907e26a8B50eA74f7A',
       mergeManager: '0x03b5d78E489b2bdF57Be8b1e2c0A5fFF369b030F'
     },
     [137]: {
