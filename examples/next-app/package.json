@@ -23,7 +23,7 @@
   "dependencies": {
     "@react-spring/web": "latest",
     "@use-gesture/react": "latest",
-    "next": "^13.x"
+    "next": "^14.x"
   },
   "devDependencies": {
     "@types/node": "20.4.0",
