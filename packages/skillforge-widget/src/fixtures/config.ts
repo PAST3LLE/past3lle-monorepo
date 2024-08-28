@@ -166,10 +166,10 @@ const WEB3_PROPS: ForgeW3CoreProvidersProps<typeof SUPPORTED_CHAINS>['config']['
   options: {
     transports: {
       11155111: fallback([
-        http(`https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_SEPOLIA_API_KEY as string}`)
+        http(`https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_KEY as string}`)
       ]),
-      137: http(`https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MATIC_API_KEY as string}`),
-      80002: http(`https://polygon-amoy.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`)
+      137: http(`https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_KEY as string}`),
+      80002: http(`https://polygon-amoy.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_KEY as string}`)
     },
     autoConnect: true,
     pollingInterval: 10_000,
