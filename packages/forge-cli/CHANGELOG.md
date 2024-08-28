@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/forge-cli@2.1.0...@past3lle/forge-cli@2.2.0-alpha.0) (2024-08-28)
+
+
+### Features
+
+* update test chains and fix chain bug ([#96](https://github.com/PAST3LLE/past3lle-monorepo/issues/96)) ([1ca3d16](https://github.com/PAST3LLE/past3lle-monorepo/commit/1ca3d16e3bc6b915c1ce207c0a0ba5e28d847a5d))
+
+
+
+
+
 # [2.1.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/forge-cli@2.0.0-alpha.3...@past3lle/forge-cli@2.1.0) (2024-01-26)
 
 

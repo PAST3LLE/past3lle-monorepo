@@ -60,17 +60,12 @@ const DEFAULT_CONFIG_PROPS: {
   contractAddresses: ForgeContractAddressMap<typeof chains>
 } = {
   metadataUris: {
-    [5]: { collectionsManager: 'https://pstlcollections.s3.eu-south-2.amazonaws.com/collections/' },
-    [80001]: { collectionsManager: 'https://pstlcollections.s3.eu-south-2.amazonaws.com/collections/' }
+    [11155111]: { collectionsManager: 'https://pstlcollections.s3.eu-south-2.amazonaws.com/collections/' }
   },
   contractAddresses: {
-    [5]: {
+    [11155111]: {
       collectionsManager: '0x00ad95f9D3E5Af8707700520FF3c45964Ef20423',
       mergeManager: '0x03b5d78E489b2bdF57Be8b1e2c0A5fFF369b030F'
-    },
-    [80001]: {
-      collectionsManager: '0x237B80e076cDfa4Dc4cC324B1a2f04F8E0513336',
-      mergeManager: '0x0B397B88C96E22E63D6D9b802df62fe40bB1B544'
     }
   }
 }

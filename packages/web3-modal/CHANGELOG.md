@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-alpha.2](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.0-alpha.1...@past3lle/web3-modal@2.3.0-alpha.2) (2024-08-28)
+
+
+### Features
+
+* update test chains and fix chain bug ([#96](https://github.com/PAST3LLE/past3lle-monorepo/issues/96)) ([1ca3d16](https://github.com/PAST3LLE/past3lle-monorepo/commit/1ca3d16e3bc6b915c1ce207c0a0ba5e28d847a5d))
+
+
+
+
+
+# [2.3.0-alpha.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.0-alpha.0...@past3lle/web3-modal@2.3.0-alpha.1) (2024-05-06)
+
+
+### Bug Fixes
+
+* **web3-modal:** HID modal derivation and balances issues ([#91](https://github.com/PAST3LLE/past3lle-monorepo/issues/91)) ([ccb317e](https://github.com/PAST3LLE/past3lle-monorepo/commit/ccb317e428239f862e7500ea75818eb8d446e58b))
+
+
+
+
+
+# [2.3.0-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.2.0...@past3lle/web3-modal@2.3.0-alpha.0) (2024-04-12)
+
+
+### Features
+
+* **web3-modal:** enabled option to add custom safe url ([#85](https://github.com/PAST3LLE/past3lle-monorepo/issues/85)) ([6b1b5b7](https://github.com/PAST3LLE/past3lle-monorepo/commit/6b1b5b7ff7e120ecd79f232e2d24c205a7c3278a))
+
+
+
+
+
 # [2.2.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.1.0...@past3lle/web3-modal@2.2.0) (2024-03-01)
 
 

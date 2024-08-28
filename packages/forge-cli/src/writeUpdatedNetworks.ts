@@ -82,7 +82,7 @@ async function writeUpdatedNetworks(): Promise<void> {
     // deployed txHash
     transactionHash,
     chainId,
-    // network string name (e.g mumbai)
+    // network string name (e.g amoy)
     network,
     customSubPath
   })

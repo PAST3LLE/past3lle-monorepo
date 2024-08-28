@@ -12,6 +12,8 @@ import { writeNetworks } from './utils/writeNetworks'
 
 dotEnv.config()
 
+const GAS_LIMIT = 3_050_000
+
 async function deployCollectionsManager(props?: { tryHigherValues: boolean }): Promise<void> {
   const { networks: networksMap, mnemonic: configMnemonic } = await getConfig()
 
@@ -103,17 +105,30 @@ Metadata folder URI:`,
   `)
 
   const { wallet, provider } = getWalletInfo({ rpcUrl, mnemonic })
+  console.log('[Forge-CLI] Provider connected chain id:', (await provider.getNetwork()).chainId)
 
   // Create a contract factory
   const factory = new ContractFactory(CollectionsManager.abi, CollectionsManager.bytecode, wallet)
-
   const constructorArgs = [metadataUri]
-
   const feeData = await getFeeData(network, props?.tryHigherValues)
 
   try {
     // Deploy the contract
-    const contract = await factory.deploy(...constructorArgs, feeData)
+    const contract = await factory.deploy(...constructorArgs, { ...feeData, gasLimit: GAS_LIMIT })
+    console.log(`
+    [Forge-CLI] Contract deployment transaction data: 
+      ----
+      Hash:             ${contract.deployTransaction.hash}
+      Nonce:            ${contract.deployTransaction.nonce.toString()}
+      --
+      Chain ID:         ${contract.deployTransaction.chainId.toString()}
+      Deployer:         ${contract.deployTransaction.from.toString()}
+      --
+      Max fee:          ${contract.deployTransaction.maxFeePerGas?.toString()}
+      Max priority fee: ${contract.deployTransaction.maxPriorityFeePerGas?.toString()}
+      Gas limit:        ${contract.deployTransaction.gasLimit.toString()}
+      Gas price:        ${contract.deployTransaction.gasPrice?.toString()}
+    `)
 
     // Wait for the deployment transaction to be mined
     await contract.deployed()
@@ -127,7 +142,7 @@ Metadata folder URI:`,
       // deployed txHash
       transactionHash: contract.deployTransaction.hash,
       chainId: provider.network.chainId,
-      // network string name (e.g mumbai)
+      // network string name (e.g amoy)
       network: provider.network.name
     })
   } catch (error) {

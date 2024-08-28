@@ -2,7 +2,7 @@ import { atom, useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { useCallback, useMemo } from 'react'
 import { Address, Chain } from 'viem'
-import { goerli } from 'viem/chains'
+import { sepolia } from 'viem/chains'
 
 import { STATE_STORAGE_KEYS } from '../../constants/state-storage-keys'
 import { ForgeChainsMinimum, ForgeContractAddressMap, ForgeMetadataUriMap, PartialForgeChains } from '../../types'
@@ -61,7 +61,7 @@ export interface UserConfigState {
   contractAddressMap: ForgeContractAddressMap<ForgeChainsMinimum>
 }
 export const userConfigAtom = atomWithStorage<UserConfigState>(STATE_STORAGE_KEYS.FORGE_USER_CONFIG_STATE, {
-  chains: [goerli],
+  chains: [sepolia],
   get readonlyChain() {
     return this.chains?.[0]
   },

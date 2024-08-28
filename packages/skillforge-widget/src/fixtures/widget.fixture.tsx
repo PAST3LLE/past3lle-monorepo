@@ -63,9 +63,9 @@ const skillforgeTheme = createTheme({
           'data:image/png;base64,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',
         chains: {
           disconnected: 'CONNECTION_ICON',
-          5: 'ETHEREUM_LOGO',
+          11155111: 'ETHEREUM_LOGO',
           137: 'MATIC_LOGO',
-          80001: 'POLYGON_LOGO'
+          80002: 'POLYGON_LOGO'
         },
         rarity: {
           empty: '',
@@ -118,14 +118,14 @@ function App() {
             wagmi: {
               options: {
                 transports: {
-                  5: http(
-                    `https://eth-goerli.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_GOERLI_API_KEY as string}`
+                  11155111: http(
+                    `https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_KEY as string}`
                   ),
                   137: http(
-                    `https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MATIC_API_KEY as string}`
+                    `https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_KEY as string}`
                   ),
-                  80001: http(
-                    `https://polygon-mumbai.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY as string}`
+                  80002: http(
+                    `https://polygon-amoy.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_API_KEY as string}`
                   )
                 }
               }

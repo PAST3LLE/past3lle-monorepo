@@ -1,3 +1,3 @@
-import { goerli, polygonMumbai } from 'viem/chains'
+import { sepolia } from 'viem/chains'
 
-export const chains = [goerli, polygonMumbai] as const
+export const chains = [sepolia] as const

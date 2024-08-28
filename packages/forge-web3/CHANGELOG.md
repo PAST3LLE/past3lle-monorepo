@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-alpha.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.2.1-alpha.1...@past3lle/forge-web3@2.3.0-alpha.0) (2024-08-28)
+
+
+### Features
+
+* update test chains and fix chain bug ([#96](https://github.com/PAST3LLE/monorepo/issues/96)) ([1ca3d16](https://github.com/PAST3LLE/monorepo/commit/1ca3d16e3bc6b915c1ce207c0a0ba5e28d847a5d))
+
+
+
+
+
+## [2.2.1-alpha.1](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.2.1-alpha.0...@past3lle/forge-web3@2.2.1-alpha.1) (2024-05-06)
+
+**Note:** Version bump only for package @past3lle/forge-web3
+
+
+
+
+
+## [2.2.1-alpha.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.2.0...@past3lle/forge-web3@2.2.1-alpha.0) (2024-04-12)
+
+**Note:** Version bump only for package @past3lle/forge-web3
+
+
+
+
+
 # [2.2.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.1.0...@past3lle/forge-web3@2.2.0) (2024-03-01)
 
 

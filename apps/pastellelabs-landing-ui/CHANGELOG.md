@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/pastellelabs-landing-ui@0.3.1-alpha.1...@past3lle/pastellelabs-landing-ui@0.4.0-alpha.0) (2024-08-28)
+
+
+### Features
+
+* update test chains and fix chain bug ([#96](https://github.com/PAST3LLE/past3lle-monorepo/issues/96)) ([1ca3d16](https://github.com/PAST3LLE/past3lle-monorepo/commit/1ca3d16e3bc6b915c1ce207c0a0ba5e28d847a5d))
+
+
+
+
+
+## [0.3.1-alpha.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/pastellelabs-landing-ui@0.3.1-alpha.0...@past3lle/pastellelabs-landing-ui@0.3.1-alpha.1) (2024-05-06)
+
+**Note:** Version bump only for package @past3lle/pastellelabs-landing-ui
+
+
+
+
+
+## [0.3.1-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/pastellelabs-landing-ui@0.3.0...@past3lle/pastellelabs-landing-ui@0.3.1-alpha.0) (2024-04-12)
+
+**Note:** Version bump only for package @past3lle/pastellelabs-landing-ui
+
+
+
+
+
 # [0.3.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/pastellelabs-landing-ui@0.2.0...@past3lle/pastellelabs-landing-ui@0.3.0) (2024-03-01)
 
 

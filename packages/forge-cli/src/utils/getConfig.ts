@@ -11,13 +11,13 @@ const DEFAULT_CONFIG: ForgeConfig = {
       id: 1,
       rpcUrl: 'https://mainnet.infura.io/v3/INSERT_INFURA_KEY_HERE'
     },
-    goerli: {
-      id: 5,
-      rpcUrl: 'https://goerli.infura.io/v3/INSERT_INFURA_KEY_HERE'
+    sepolia: {
+      id: 11155111,
+      rpcUrl: 'https://sepolia.infura.io/v3/INSERT_INFURA_KEY_HERE'
     },
-    mumbai: {
-      id: 80001,
-      rpcUrl: 'https://rpc-mumbai.maticvigil.com/v1/INSERT_MATIC_VIGIL_KEY_HERE'
+    amoy: {
+      id: 80002,
+      rpcUrl: 'https://rpc-amoy.maticvigil.com/v1/INSERT_MATIC_VIGIL_KEY_HERE'
     },
     matic: {
       id: 137,
@@ -97,16 +97,16 @@ export async function getConfig() {
 async function createDefaultConfigFile() {
   const configFileContent = `module.exports = {
   networks: {
-    goerli: {
-      id: 5,
-      rpcUrl: process.env.GOERLI_RPC_URL
+    sepolia: {
+      id: 11155111,
+      rpcUrl: process.env.SEPOLIA_RPC_URL
     },
     matic: {
       id: 137,
       rpcUrl: process.env.POLYGON_RPC_URL
     },
-    mumbai: {
-      id: 80001,
+    amoy: {
+      id: 80002,
       rpcUrl: process.env.ALCHEMY_RPC_URL
     }
   },

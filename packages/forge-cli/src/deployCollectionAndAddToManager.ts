@@ -215,7 +215,7 @@ Metadata URI:`,
       // deployed txHash
       transactionHash: collectionContract.deployTransaction.hash,
       chainId: provider.network.chainId,
-      // network string name (e.g mumbai)
+      // network string name (e.g amoy)
       network: provider.network.name,
       customSubPath: initialPromptAnswer?.customSubPath
     })
