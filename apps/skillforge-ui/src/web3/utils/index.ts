@@ -1,8 +1,8 @@
 const BLOCK_EXPLORER_PREFIXES: { [chainId: number]: string } = {
   1: 'etherscan.io',
-  5: 'goerli.etherscan.io',
+  11155111: 'sepolia.etherscan.io',
   137: 'polygonscan.com',
-  80001: 'mumbai.polygonscan.com'
+  80002: 'amoy.polygonscan.com'
 }
 
 export function getBlockExplorerURL(

@@ -6,7 +6,7 @@ import { config } from 'dotenv'
 import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Address, http, parseEther } from 'viem'
-import { goerli, mainnet, polygon, polygonMumbai } from 'viem/chains'
+import { mainnet, polygon, sepolia } from 'viem/chains'
 import { ConnectorNotFoundError, useBalance, useSendTransaction } from 'wagmi'
 import { injected } from 'wagmi/connectors'
 
@@ -23,6 +23,7 @@ import {
 } from '../hooks/api/useTransactions'
 import { PstlW3Providers } from '../providers'
 import { createTheme } from '../theme'
+import { amoy } from './chains'
 import { COMMON_CONNECTOR_OVERRIDES, DEFAULT_PROPS, DEFAULT_PROPS_WEB3AUTH, pstlModalTheme } from './config'
 import { INJECTED_CONNECTORS, wagmiConnectors } from './connectorsAndPlugins'
 
@@ -209,9 +210,9 @@ export default {
             options: {
               transports: {
                 1: http('https://mainnet.infura.io/v3/5f5d6fa3fcd249f288a5aa36d2337914'),
-                5: http('https://goerli.infura.io/v3/5f5d6fa3fcd249f288a5aa36d2337914'),
+                11155111: http('https://sepolia.infura.io/v3/5f5d6fa3fcd249f288a5aa36d2337914'),
                 137: http('https://polygon-mainnet.infura.io/v3/5f5d6fa3fcd249f288a5aa36d2337914'),
-                80001: http('https://polygon-mumbai.infura.io/v3/5f5d6fa3fcd249f288a5aa36d2337914')
+                80002: http('https://polygon-amoy.infura.io/v3/5f5d6fa3fcd249f288a5aa36d2337914')
               }
             }
           }
@@ -485,7 +486,7 @@ export default {
       <PstlW3Providers
         config={{
           ...DEFAULT_PROPS,
-          chains: [DEFAULT_PROPS.chains[0]],
+          // chains: [DEFAULT_PROPS.chains[0]],
           connectors: {
             connectors: INJECTED_CONNECTORS,
             overrides: COMMON_CONNECTOR_OVERRIDES
@@ -738,7 +739,7 @@ export default {
               if (searchParams.get(SOFT_ENVIRONMENT_PARAM) === 'prod') {
                 return [mainnet]
               } else if (searchParams.get(SOFT_ENVIRONMENT_PARAM) === 'dev') {
-                return [mainnet, goerli, polygon]
+                return [mainnet, sepolia, polygon]
               } else {
                 return chains
               }
@@ -748,7 +749,7 @@ export default {
               if (searchParams.get(HARD_ENVIRONMENT_PARAM) === 'prod') {
                 return [mainnet]
               } else if (searchParams.get(HARD_ENVIRONMENT_PARAM) === 'dev') {
-                return [mainnet, goerli, polygon]
+                return [mainnet, sepolia, polygon]
               } else {
                 return chains
               }
@@ -784,9 +785,9 @@ export default {
                 ...DEFAULT_PROPS_WEB3AUTH.clients?.wagmi?.options,
                 transports: {
                   1: http(`https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`),
-                  5: http(`https://goerli.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`),
+                  11155111: http(`https://sepolia.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`),
                   137: http(`https://polygon-mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`),
-                  80001: http(`https://polygon-mumbai.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`)
+                  80002: http(`https://polygon-amoy.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`)
                 }
               }
             }
@@ -796,8 +797,8 @@ export default {
         <AppWithWagmiAccess />
         <Web3Button />
         <button onClick={() => limitChains([mainnet])}>Limit chains to just MAINNET</button>
-        <button onClick={() => limitChains([goerli])}>Limit chains to just GOERLI</button>
-        <button onClick={() => limitChains([polygonMumbai])}>Limit chains to just MUMMBAI</button>
+        <button onClick={() => limitChains([sepolia])}>Limit chains to just SEPOLIA</button>
+        <button onClick={() => limitChains([amoy])}>Limit chains to just AMOY</button>
       </PstlW3Providers>
     )
   }),
@@ -997,7 +998,7 @@ export default {
     <PstlW3Providers
       config={{
         appName: 'No theme',
-        chains: [goerli],
+        chains: [sepolia],
         modals: {
           root: {
             themeConfig: {
@@ -1052,7 +1053,7 @@ function BaseModal(): React.ReactElement<any, any> {
               }
             ]
           },
-          chainId: 5,
+          chainId: 11155111,
           dateAdded: Date.now() - 1_000_000,
           walletType: 'SAFE',
           safeTxHash: '0x123',

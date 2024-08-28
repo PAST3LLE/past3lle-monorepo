@@ -47,12 +47,16 @@ export function useChainId() {
 }
 
 export function useSupportedChainId(): SupportedForgeChainIds | undefined {
-  const id = useChainId()
-  return id
+  return useChainId()
 }
 
 export function useSupportedOrDefaultChainId(allowDefault = true) {
   const [defaultChain] = useForgeReadonlyChainAtom()
+  const supportedChainId = useSupportedChainId()
 
-  return useSupportedChainId() || allowDefault ? (defaultChain?.id as SupportedForgeChainIds) : undefined
+  return useMemo(
+    () =>
+      !!supportedChainId ? supportedChainId : allowDefault ? (defaultChain?.id as SupportedForgeChainIds) : undefined,
+    [allowDefault, defaultChain?.id, supportedChainId]
+  )
 }

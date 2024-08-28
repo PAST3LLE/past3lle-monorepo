@@ -1,4 +1,4 @@
-import { goerli, polygon, polygonMumbai } from 'viem/chains'
+import { polygon, sepolia } from 'viem/chains'
 
-export type CosmosSupportedChainIds = 1 | 5 | 137 | 80001
-export const chains = [goerli, polygon, polygonMumbai] as const
+export type CosmosSupportedChainIds = 1 | 11155111 | 137 | 80002
+export const chains = [sepolia, polygon] as const

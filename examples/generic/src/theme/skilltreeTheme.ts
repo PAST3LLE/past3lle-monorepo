@@ -29,9 +29,9 @@ const SKILLTREE_WIDGET_THEME = {
           shop: 'string',
           chains: {
             disconnected: 'disconnected-logo',
-            5: 'GOERLI-logo',
+            11155111: 'SEPOLIA-logo',
             137: 'POLYGON-logo',
-            80001: 'POLYGON_MUMBAI-logo'
+            80002: 'POLYGON_MUMBAI-logo'
           },
           rarity: {
             empty: 'empty',

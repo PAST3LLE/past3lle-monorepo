@@ -1,15 +1,15 @@
 module.exports = {
   networks: {
-    goerli: {
-      id: 5,
-      rpcUrl: process.env.GOERLI_RPC_URL
+    sepolia: {
+      id: 11155111,
+      rpcUrl: process.env.SEPOLIA_RPC_URL
     },
     matic: {
       id: 137,
       rpcUrl: process.env.POLYGON_RPC_URL
     },
-    mumbai: {
-      id: 80001,
+    amoy: {
+      id: 80002,
       rpcUrl: process.env.ALCHEMY_RPC_URL
     }
   },

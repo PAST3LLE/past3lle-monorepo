@@ -24,11 +24,11 @@ export function buildSkillMetadataExplorerUri(
 
 function chainIdToOpenseaNetworkName(chainId: SupportedForgeChainIds) {
   switch (chainId) {
-    case 5:
-      return 'goerli'
+    case 11155111:
+      return 'sepolia'
     case 137:
       return 'matic'
-    case 80001:
+    case 80002:
       return 'mumbai'
     default:
       return ''
