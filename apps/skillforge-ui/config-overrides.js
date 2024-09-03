@@ -16,6 +16,7 @@ module.exports = {
       http: require.resolve('stream-http'),
       os: require.resolve('os-browserify'),
       url: require.resolve('url'),
+      vm: require.resolve("vm-browserify"),
       zlib: require.resolve('browserify-zlib')
     })
     config.resolve.fallback = fallback
@@ -34,6 +35,14 @@ module.exports = {
         fullySpecified: false
       }
     })
+
+    // fixes "Uncaught TypeError: (0 , superstruct_1.boolean) is not a function" error
+    config.module.rules.map(rule => {
+      if (rule.oneOf instanceof Array) {
+        rule.oneOf[rule.oneOf.length - 1].exclude = [/\.(js|mjs|jsx|cjs|ts|tsx)$/, /\.html$/, /\.json$/];
+      }
+      return rule;
+    });
 
     // Bundle size warning bypass
     config.plugins.forEach((plugin) => {
