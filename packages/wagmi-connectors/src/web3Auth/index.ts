@@ -1,13 +1,11 @@
 // Web3Auth Libraries
-import { CHAIN_NAMESPACES, WALLET_ADAPTERS } from '@web3auth/base'
+import { CHAIN_NAMESPACES, IBaseProvider } from '@web3auth/base'
 import { EthereumPrivateKeyProvider } from '@web3auth/ethereum-provider'
 import { Web3Auth, Web3AuthOptions } from '@web3auth/modal'
 import { OpenloginAdapter, OpenloginLoginParams } from '@web3auth/openlogin-adapter'
+import { WalletServicesPlugin } from '@web3auth/wallet-services-plugin'
+import { Web3AuthConnector } from '@web3auth/web3auth-wagmi-connector'
 import { createConnector } from 'wagmi'
-
-import { Web3AuthParameters, web3Auth } from './connector/index'
-
-// import { EthereumPrivateKeyProvider } from '@web3auth/ethereum-provider'
 
 /**
      * @description Web3Auth modal connector
@@ -38,17 +36,26 @@ import { Web3AuthParameters, web3Auth } from './connector/index'
      }
     */
 
-export interface PstlWeb3AuthParameters extends Omit<Web3AuthParameters, 'adapter' | 'web3AuthInstance'> {
+export interface PstlWeb3AuthParameters
+  extends Omit<Web3AuthOptions, 'privateKeyProvider' | 'clientId' | 'adapter' | 'web3AuthInstance'> {
   network: Web3AuthOptions['web3AuthNetwork']
   storageKey?: Web3AuthOptions['storageKey']
+  /**
+   * @param preset - optional - prebuilt presets for setting up config
+   * @deprecated - will be removed in coming minor releases
+   */
   preset?: 'DISALLOW_EXTERNAL_WALLETS' | 'ALLOW_EXTERNAL_WALLETS'
   projectId: string
-  uiConfig?: Web3AuthOptions['uiConfig']
+  uiConfig?: Web3AuthOptions['uiConfig'] & {
+    walletButtonPosition?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
+  }
   mfaLevel?: OpenloginLoginParams['mfaLevel']
   uxMode?: 'popup' | 'redirect'
   enableLogging?: boolean
+  privateKeyProvider?: IBaseProvider<string>;
 }
-export function pstlWeb3Auth(options: PstlWeb3AuthParameters) {
+
+export function web3Auth(options: PstlWeb3AuthParameters) {
   return createConnector((config) => {
     const chainConfig = {
       chainNamespace: CHAIN_NAMESPACES.EIP155,
@@ -59,63 +66,54 @@ export function pstlWeb3Auth(options: PstlWeb3AuthParameters) {
       tickerName: config.chains[0].nativeCurrency?.name,
       ticker: config.chains[0].nativeCurrency?.symbol
     }
-    return web3Auth({
+
+    const privateKeyProvider = options?.privateKeyProvider || new EthereumPrivateKeyProvider({
+      config: {
+        chainConfig
+      }
+    })
+
+    const web3AuthInstance = new Web3Auth({
+      clientId: options.projectId,
+      web3AuthNetwork: options.network,
+      chainConfig,
+      privateKeyProvider,
+      uiConfig: options.uiConfig,
+      enableLogging: options.enableLogging
+    })
+
+    // setup adapters
+    const openLoginAdapter = new OpenloginAdapter({
+      privateKeyProvider,
+      adapterSettings: {
+        network: options.network,
+        uxMode: options.uxMode,
+        storageKey: options.storageKey,
+        whiteLabel: options.uiConfig
+      },
+      loginSettings: {
+        mfaLevel: options.mfaLevel
+      }
+    })
+    // setup openlogin
+    web3AuthInstance.configureAdapter(openLoginAdapter)
+
+    const walletServicesPlugin = new WalletServicesPlugin({
+      wsEmbedOpts: {
+        web3AuthClientId: options.projectId,
+        web3AuthNetwork: options.network
+      },
+      walletInitOptions: {
+        confirmationStrategy: 'modal',
+        whiteLabel: { ...options.uiConfig, buttonPosition: options.uiConfig?.walletButtonPosition }
+      }
+    })
+    // setup plugins
+    web3AuthInstance.addPlugin(walletServicesPlugin)
+
+    return Web3AuthConnector({
       ...options,
-      web3AuthInstance: new Web3Auth({
-        clientId: options.projectId,
-        chainConfig,
-        web3AuthNetwork: options.network,
-        authMode: 'DAPP',
-        uiConfig: options.uiConfig,
-        enableLogging: options.enableLogging
-      }),
-      adapter: new OpenloginAdapter({
-        privateKeyProvider: !options.plugins?.length
-          ? new EthereumPrivateKeyProvider({
-              config: {
-                chainConfig
-              }
-            })
-          : undefined,
-        adapterSettings: {
-          network: options.network,
-          uxMode: options.uxMode,
-          storageKey: options.storageKey,
-          whiteLabel: options.uiConfig
-        },
-        loginSettings: {
-          mfaLevel: options.mfaLevel
-        }
-      }),
-      modalConfig:
-        options?.preset === 'DISALLOW_EXTERNAL_WALLETS'
-          ? {
-              [WALLET_ADAPTERS.METAMASK]: {
-                label: 'MetaMask',
-                showOnDesktop: false,
-                showOnModal: false,
-                showOnMobile: false
-              },
-              [WALLET_ADAPTERS.TORUS_EVM]: {
-                label: 'Torus',
-                showOnDesktop: false,
-                showOnModal: false,
-                showOnMobile: false
-              },
-              [WALLET_ADAPTERS.WALLET_CONNECT_V2]: {
-                label: 'WalletConnect [v2]',
-                showOnDesktop: false,
-                showOnModal: false,
-                showOnMobile: false
-              },
-              [WALLET_ADAPTERS.COINBASE]: {
-                label: 'Coinbase Wallet',
-                showOnDesktop: false,
-                showOnModal: false,
-                showOnMobile: false
-              }
-            }
-          : undefined
+      web3AuthInstance
     })(config)
   })
 }

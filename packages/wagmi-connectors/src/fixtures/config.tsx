@@ -26,11 +26,10 @@ const WAGMI_CLIENT = createConfig({
       network: 'sapphire_devnet',
       uiConfig: {
         appName: 'SKILLFORGE TEST',
-        logoLight: '',
-        logoDark: ''
+        logoLight: 'logoLight.png',
+        logoDark: 'logoDark.png'
       },
-      uxMode: 'popup',
-      preset: 'DISALLOW_EXTERNAL_WALLETS'
+      uxMode: 'popup'
     })
   ],
   transports: {
