@@ -1,5 +1,5 @@
 import METAMASK_ICON from '../../assets/png/metamask.png'
-import { ledgerHid, ledgerLive, pstlWeb3Auth, PstlWeb3AuthParameters } from '@past3lle/wagmi-connectors'
+import { ledgerHid, ledgerLive, web3Auth, Web3AuthParameters } from '@past3lle/wagmi-connectors'
 import { ASSETS_MAP } from 'assets'
 import GOOGLE_APPLE_LOGO from 'assets/png/google-apple.png'
 import { skillforgeTheme } from 'theme/skillforge'
@@ -8,7 +8,7 @@ import { injected } from 'wagmi/connectors'
 
 const IS_SERVER = typeof globalThis?.window === 'undefined'
 
-function _getWhitelistTheme(): PstlWeb3AuthParameters['uiConfig'] {
+function _getWhitelistTheme(): Web3AuthParameters['uiConfig'] {
   if (!JSON.parse(process.env.REACT_APP_WEB3AUTH_WHITELIST_ENABLED || 'false')) return
 
   return {
@@ -48,11 +48,10 @@ const connectors = {
         }
       }
     }),
-    pstlWeb3Auth({
-      network: process.env.REACT_APP_WEB3_AUTH_NETWORK as PstlWeb3AuthParameters['network'],
+    web3Auth({
+      network: process.env.REACT_APP_WEB3_AUTH_NETWORK as Web3AuthParameters['network'],
       projectId: process.env.REACT_APP_WEB3AUTH_ID as string,
       storageKey: 'session',
-      preset: 'DISALLOW_EXTERNAL_WALLETS',
       mfaLevel: 'none',
       uxMode: 'popup',
       ..._getWhitelistTheme()
