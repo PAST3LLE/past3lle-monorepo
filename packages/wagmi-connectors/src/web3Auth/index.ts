@@ -52,7 +52,7 @@ export interface PstlWeb3AuthParameters
   mfaLevel?: OpenloginLoginParams['mfaLevel']
   uxMode?: 'popup' | 'redirect'
   enableLogging?: boolean
-  privateKeyProvider?: IBaseProvider<string>;
+  privateKeyProvider?: IBaseProvider<string>
 }
 
 export function web3Auth(options: PstlWeb3AuthParameters) {
@@ -67,11 +67,13 @@ export function web3Auth(options: PstlWeb3AuthParameters) {
       ticker: config.chains[0].nativeCurrency?.symbol
     }
 
-    const privateKeyProvider = options?.privateKeyProvider || new EthereumPrivateKeyProvider({
-      config: {
-        chainConfig
-      }
-    })
+    const privateKeyProvider =
+      options?.privateKeyProvider ||
+      new EthereumPrivateKeyProvider({
+        config: {
+          chainConfig
+        }
+      })
 
     const web3AuthInstance = new Web3Auth({
       clientId: options.projectId,
