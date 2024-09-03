@@ -54,7 +54,7 @@ const connectors = {
       storageKey: 'session',
       mfaLevel: 'none',
       uxMode: 'popup',
-      ..._getWhitelistTheme()
+      uiConfig: _getWhitelistTheme()
     })
   ],
   overrides: {
