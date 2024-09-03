@@ -1,7 +1,6 @@
 import { devWarn } from '@past3lle/utils'
-import { iframeEthereum, ledgerLive, pstlWeb3Auth } from '@past3lle/wagmi-connectors'
+import { iframeEthereum, ledgerLive, web3Auth } from '@past3lle/wagmi-connectors'
 import { ledgerHid } from '@past3lle/wagmi-connectors/ledgerHid'
-import { TorusWalletConnectorPlugin } from '@web3auth/torus-wallet-connector-plugin'
 import { CreateConnectorFn } from 'wagmi'
 import { injected } from 'wagmi/connectors'
 
@@ -13,31 +12,11 @@ if (!process.env.REACT_APP_WEB3AUTH_DEVNET_CLIENT_ID) {
   throw new Error('Missing REACT_APP_WEB3AUTH_DEVNET_CLIENT_ID variable. Check .env')
 }
 
-const TORUS_LOGO = 'https://web3auth.io/docs/contents/logo-ethereum.png'
-
-export const web3authPlugins = {
-  TORUS: new TorusWalletConnectorPlugin({
-    torusWalletOpts: {
-      buttonPosition: 'bottom-left',
-      apiKey: process.env.REACT_APP_WEB3AUTH_DEVNET_CLIENT_ID
-    },
-    walletInitOptions: {
-      whiteLabel: {
-        theme: { isDark: true, colors: { primary: '#00a8ff' } },
-        logoDark: TORUS_LOGO,
-        logoLight: TORUS_LOGO
-      },
-      useWalletConnect: true,
-      enableLogging: true
-    }
-  })
-}
-
 export const wagmiConnectors: Record<string, CreateConnectorFn> = {
   ledgerLiveModal: ledgerLive({}),
   ledgerHID: ledgerHid({ shimDisconnect: true }),
   ledgerIFrame: iframeEthereum({}),
-  web3auth: pstlWeb3Auth({
+  web3auth: web3Auth({
     projectId: process.env.REACT_APP_WEB3AUTH_DEVNET_CLIENT_ID,
     network: 'sapphire_devnet',
     uiConfig: {
