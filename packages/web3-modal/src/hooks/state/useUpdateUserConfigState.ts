@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
-import { ReadonlyChains } from 'src/providers/types'
 import { mainnet } from 'viem/chains'
 
 import { CHAIN_IMAGES } from '../../constants'
 import { PstlWeb3ModalProps } from '../../providers'
+import { ReadonlyChains } from '../../providers/types'
 import { ConnectorOverrides } from '../../types'
 import { usePstlWeb3ModalStore } from '../api/usePstlWeb3ModalStore'
 

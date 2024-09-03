@@ -2,41 +2,16 @@ import {
   ForgeChainsMinimum,
   ForgeContractAddressMap,
   ForgeMetadataUriMap,
-  ForgeW3CoreProvidersProps,
   createWeb3ModalTheme
 } from '@past3lle/forge-web3'
 import { devDebug } from '@past3lle/utils'
 import { ledgerHid } from '@past3lle/wagmi-connectors'
-import { polygon, sepolia } from 'viem/chains'
-import { defineChain } from 'viem/utils'
-import { ConnectorNotFoundError, ProviderNotFoundError, fallback, http } from 'wagmi'
+import { fallback, http } from 'viem'
+import { polygon, polygonAmoy, sepolia } from 'viem/chains'
+import { ConnectorNotFoundError, ProviderNotFoundError } from 'wagmi'
 import { injected } from 'wagmi/connectors'
 
-// TODO: remove when viem adds amoy polygon
-export const amoy = defineChain({
-  id: 80002,
-  name: 'Amoy',
-  nativeCurrency: {
-    decimals: 18,
-    name: 'Matic',
-    symbol: 'MATIC'
-  },
-  rpcUrls: {
-    default: {
-      http: ['https://rpc-amoy.polygon.technology/'],
-      webSocket: ['wss://rpc-amoy.polygon.technology/']
-    }
-  },
-  blockExplorers: {
-    default: { name: 'Explorer', url: 'https://amoy.polygonscan.com/' }
-  },
-  contracts: {
-    multicall3: {
-      address: '0xcA11bde05977b3631167028862bE2a173976CA11',
-      blockCreated: 3127388
-    }
-  }
-})
+import { SkillForgeProps } from '../components'
 
 const IS_SERVER = typeof globalThis?.window === 'undefined'
 const MODAL_THEME = createWeb3ModalTheme({
@@ -110,8 +85,8 @@ const MODAL_THEME = createWeb3ModalTheme({
 })
 // TESTING ID - DONT USE IN PROD
 const WALLETCONNECT_TEST_ID = 'a01e2f3b7c64ff495f9cb28e4e2d4b49'
-const SUPPORTED_CHAINS = [sepolia, polygon, amoy] as const satisfies ForgeChainsMinimum
-const WEB3_PROPS: ForgeW3CoreProvidersProps<typeof SUPPORTED_CHAINS>['config']['web3'] = {
+const SUPPORTED_CHAINS = [sepolia, polygon, polygonAmoy] as const satisfies ForgeChainsMinimum
+const WEB3_PROPS: SkillForgeProps<typeof SUPPORTED_CHAINS>['config']['web3'] = {
   chains: SUPPORTED_CHAINS,
   connectors: {
     connectors: [
@@ -192,7 +167,7 @@ const WEB3_PROPS: ForgeW3CoreProvidersProps<typeof SUPPORTED_CHAINS>['config']['
       }
     }
   }
-} as const satisfies ForgeW3CoreProvidersProps<typeof SUPPORTED_CHAINS>['config']['web3']
+} as const satisfies SkillForgeProps<typeof SUPPORTED_CHAINS>['config']['web3']
 
 const METADATA_URIS_AND_CONTRACTS_PROPS = {
   metadataUris: {

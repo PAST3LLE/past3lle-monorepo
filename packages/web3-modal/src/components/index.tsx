@@ -1,6 +1,5 @@
-import { ReadonlyChains } from 'src/providers/types'
-
 import { PstlWeb3ModalProps } from '../providers'
+import { ReadonlyChains } from '../providers/types'
 import { PstlWeb3Modal } from './modals'
 
 interface ConnectedConnectionModalProps<chains extends ReadonlyChains = ReadonlyChains> {

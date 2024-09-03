@@ -67,7 +67,13 @@ export function useUserConnectionInfo() {
   } = usePstlWeb3ModalStore()
   const balance = useBalance({
     address,
-    chainId
+    chainId,
+    query: {
+      // TODO: fix when wagmi decides what to do about this structural sharing bug
+      // * involving BigInt serialisation errors and structural sharing
+      // * see https://github.com/wevm/wagmi/issues/4233
+      structuralSharing: false
+    }
   })
   const { connectors } = useConnectWagmi()
 
