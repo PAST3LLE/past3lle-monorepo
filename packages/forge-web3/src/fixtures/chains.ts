@@ -1,3 +1,4 @@
-import { sepolia } from 'viem/chains'
+import { polygonAmoy, sepolia } from 'viem/chains'
+import { ForgeChainsMinimum } from '..'
 
-export const chains = [sepolia] as const
+export const chains = [sepolia, polygonAmoy] as const satisfies ForgeChainsMinimum
