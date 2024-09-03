@@ -1,5 +1,6 @@
 import METAMASK_ICON from '../../assets/png/metamask.png'
 import { ledgerHid, ledgerLive, web3Auth, Web3AuthParameters } from '@past3lle/wagmi-connectors'
+import { PstlWeb3ModalProps } from '@past3lle/web3-modal'
 import { ASSETS_MAP } from 'assets'
 import GOOGLE_APPLE_LOGO from 'assets/png/google-apple.png'
 import { skillforgeTheme } from 'theme/skillforge'
@@ -81,6 +82,6 @@ const connectors = {
       rank: 0
     }
   }
-}
+} satisfies PstlWeb3ModalProps['connectors']
 const frameConnectors = [ledgerLive()]
 export { connectors, frameConnectors }
