@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1-alpha.0](https://github.com/PAST3LLE/schematics-monorepo/compare/@past3lle/components@2.1.0...@past3lle/components@2.1.1-alpha.0) (2024-09-04)
+
+
+### Bug Fixes
+
+* **skillforge-ui:** update skillforge-ui imports and update root yarn lock ([#101](https://github.com/PAST3LLE/schematics-monorepo/issues/101)) ([d4d714a](https://github.com/PAST3LLE/schematics-monorepo/commit/d4d714a45c9b9a18b870e218f2b5b4d70c34b744))
+
+
+
+
+
 # [2.1.0](https://github.com/PAST3LLE/schematics-monorepo/compare/@past3lle/components@2.0.0-alpha.3...@past3lle/components@2.1.0) (2024-01-26)
 
 

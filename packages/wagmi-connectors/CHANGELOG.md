@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1-alpha.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/wagmi-connectors@2.3.1-alpha.0...@past3lle/wagmi-connectors@2.3.1-alpha.1) (2024-09-04)
+
+
+### Bug Fixes
+
+* **skillforge-ui:** update skillforge-ui imports and update root yarn lock ([#101](https://github.com/PAST3LLE/past3lle-monorepo/issues/101)) ([d4d714a](https://github.com/PAST3LLE/past3lle-monorepo/commit/d4d714a45c9b9a18b870e218f2b5b4d70c34b744))
+
+
+
+
+
 ## [2.3.1-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/wagmi-connectors@2.3.0...@past3lle/wagmi-connectors@2.3.1-alpha.0) (2024-09-03)
 
 
