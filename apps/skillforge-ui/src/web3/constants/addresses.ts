@@ -1,6 +1,6 @@
 import COLLECTIONS_MANAGER_ADDRESSES from '../../forge-networks.json'
 import CONTRACTS_NETWORKS from '@past3lle/skilltree-contracts/networks.json'
-import { Address } from '@past3lle/types'
+import { Address } from 'viem'
 
 export type ContractAddresses = typeof CONTRACT_ADDRESSES_MAP
 export const CONTRACT_ADDRESSES_MAP = {

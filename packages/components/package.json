@@ -13,7 +13,8 @@
   "typings": "dist/index.d.ts",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "!dist/**/*.fixture.{ts,tsx}"
   ],
   "repository": {
     "type": "git",

@@ -42,7 +42,7 @@
     "clean": "rm -rf dist && rm -rf tsconfig.tsbuildinfo",
     "copy-public": "cp -r \"./public\" \"./dist\"",
     "copy-packageJSON": "cp \"./package.json\" ./dist/",
-    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' & tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && yarn copy-public && yarn copy-packageJSON",
+    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json && yarn copy-public && yarn copy-packageJSON",
     "cosmos": "IS_COSMOS=true cosmos",
     "build:bundles": "rollup -c",
     "build": "yarn clean && yarn compile && yarn build:bundles",

@@ -81,7 +81,7 @@
     "build": "yarn clean && yarn compile && yarn build:bundles && yarn post:build",
     "post:build": "node ../../scripts/subModulePostBuild.mjs",
     "clean": "rm -rf dist && rm -rf tsconfig.tsbuildinfo",
-    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' & tsc --project tsconfig.cjs.json & tsc --project tsconfig.esm.json && cp \"./package.json\" ./dist/",
+    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' && tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json && cp \"./package.json\" ./dist/",
     "cosmos": "cosmos",
     "prepack": "yarn build",
     "start": "tsdx watch",
