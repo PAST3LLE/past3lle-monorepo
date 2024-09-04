@@ -4,7 +4,7 @@
   "repository": "past3lle/monorepo",
   "private": true,
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^18.8 || >=20"
   },
   "scripts": {
     "analyze:scope": "lerna run analyze --scope",

@@ -16,7 +16,7 @@
   "private": true,
   "version": "0.4.1-alpha.1",
   "engines": {
-    "node": ">=18.12.0"
+    "node": "^18.8 || >=20"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
