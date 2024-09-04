@@ -14,7 +14,7 @@
     "url": "git+https://github.com/PAST3LLE/past3lle-monorepo.git"
   },
   "private": true,
-  "version": "1.3.1-alpha.1",
+  "version": "1.3.1-alpha.2",
   "engines": {
     "node": "^18.8 || >=20"
   },
