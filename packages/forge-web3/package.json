@@ -3,8 +3,6 @@
   "sideEffects": false,
   "version": "2.3.1-alpha.0",
   "description": "PAST3LLE FORGE Web3 hooks and tings",
-  "typings": "dist/types/index.d.ts",
-  "types": "dist/types/index.d.ts",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "exports": {
@@ -12,6 +10,11 @@
     "import": "./dist/esm/index.js",
     "types": "./dist/types/index.d.ts"
   },
+  "typings": "dist/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "directory": "packages/forge-web3",
@@ -29,15 +32,12 @@
   "author": "pastelle",
   "homepage": "https://github.com/past3lle/monorepo/tree/main/packages/forge-web3#readme",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "pack": "yarn pack",
     "check-types": "npx tsc --noEmit",
     "clean": "rm -rf dist && rm -rf tsconfig.tsbuildinfo",
     "compile:tsdx": "tsdx build --transpileOnly && cp \"./package.json\" ./dist/",
-    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' & tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && cp \"./package.json\" ./dist/",
+    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json && cp \"./package.json\" ./dist/",
     "cosmos": "cosmos",
     "build": "yarn clean && yarn compile",
     "build:tsdx": "yarn clean && yarn compile:tsdx",
