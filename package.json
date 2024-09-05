@@ -4,7 +4,7 @@
   "repository": "past3lle/monorepo",
   "private": true,
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^18.8 || >=20"
   },
   "scripts": {
     "analyze:scope": "lerna run analyze --scope",
@@ -40,14 +40,6 @@
     "version:ci": "yarn version:cc --yes",
     "version:update": "node scripts/updateVersions.mjs"
   },
-  "resolutions": {
-    "@tanstack/react-query": "^5.x",
-    "**/*/@tanstack/react-query": "^5.x",
-    "**/*/viem": "^2.x",
-    "viem": "^2.x",
-    "**/*/wagmi": ">=2.5.5 < 3",
-    "wagmi": ">=2.5.5 < 3"
-  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.18.6",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
@@ -68,6 +60,14 @@
     "@babel/preset-env": "^7.20.2"
   },
   "dependencies": {},
+  "resolutions": {
+    "@tanstack/react-query": "^5.x",
+    "**/*/@tanstack/react-query": "^5.x",
+    "**/*/viem": ">=2.10.0 < 3",
+    "viem": ">=2.10.0 < 3",
+    "**/*/wagmi": ">=2.5.5 < 3",
+    "wagmi": ">=2.5.5 < 3"
+  },
   "workspaces": [
     "packages/*",
     "apps/*"

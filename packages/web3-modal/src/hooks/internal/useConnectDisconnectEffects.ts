@@ -28,7 +28,7 @@ export function useConnectDisconnectEffects({
 
   // On disconnect status updates
   useEffect(() => {
-    if (disconnect.mutation?.onSuccess && dStatus === 'success' && dData && dContext && dVariables) {
+    if (disconnect.mutation?.onSuccess && dStatus === 'success' && dContext && dVariables) {
       disconnect.mutation.onSuccess(dData, dVariables, dContext)
     } else if (disconnect.mutation?.onError && dStatus === 'error' && dError && dVariables) {
       disconnect.mutation.onError(dError, dVariables, dContext)

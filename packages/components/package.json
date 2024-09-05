@@ -1,7 +1,7 @@
 {
   "name": "@past3lle/components",
   "sideEffects": false,
-  "version": "2.1.0",
+  "version": "2.1.1-alpha.0",
   "description": "common components",
   "main": "dist/components.esm.js",
   "module": "dist/components.esm.js",
@@ -13,7 +13,8 @@
   "typings": "dist/index.d.ts",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "!dist/**/*.fixture.{ts,tsx}"
   ],
   "repository": {
     "type": "git",
@@ -83,8 +84,8 @@
   "dependencies": {
     "@past3lle/assets": "^2.1.0",
     "@past3lle/constants": "^2.1.0",
-    "@past3lle/hooks": "^2.1.0",
-    "@past3lle/theme": "^2.1.0",
+    "@past3lle/hooks": "^2.1.1-alpha.0",
+    "@past3lle/theme": "^2.1.1-alpha.0",
     "@past3lle/types": "^2.1.0",
     "@past3lle/utils": "^2.1.0",
     "@popperjs/core": "^2.11.6",

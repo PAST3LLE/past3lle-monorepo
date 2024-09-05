@@ -64,7 +64,7 @@ export function useForgeClaimLockedSkillCallback() {
         address: mergeManager,
         abi: MergeManager__factory.abi,
         functionName: 'claimLockedSkill',
-        args: [formattedArgs]
+        args: [formattedArgs as never]
       }).then((hash) => {
         addPending(hash as Hash, { metadata: { forgeSkillId: skill?.properties.id, forgeTransactionType: 'claim' } })
         return hash

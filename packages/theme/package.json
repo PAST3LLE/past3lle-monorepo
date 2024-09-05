@@ -1,7 +1,7 @@
 {
   "name": "@past3lle/theme",
   "sideEffects": false,
-  "version": "2.1.0",
+  "version": "2.1.1-alpha.0",
   "description": "common theme parts",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -27,7 +27,7 @@
     "check-types": "tsc --noEmit",
     "clean": "rm -rf dist && rm -rf tsconfig.tsbuildinfo",
     "compile:tsdx": "tsdx build && cp \"./package.json\" ./dist/",
-    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' & tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && cp \"./package.json\" ./dist/",
+    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json && cp \"./package.json\" ./dist/",
     "build": "yarn clean && yarn compile",
     "build:tsc": "yarn clean && yarn compile:tsc",
     "prepack": "yarn build",

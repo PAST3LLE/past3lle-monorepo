@@ -217,7 +217,7 @@ export const StyledConnectionModal = styled(Modal)<{ modal: keyof RequiredPstlSu
     &[data-reach-dialog-content] {
       position: relative;
       font-size: ${(props) => props.theme.modals?.[props.modal]?.baseFontSize}px;
-      ${(props) => upToSmall`
+      ${(props) => upToExtraSmall`
           min-height: ${props?.minHeight || '75%'};
           max-height: ${props?.maxHeight || '550px'};
           max-width: unset;
@@ -306,6 +306,12 @@ export const WalletsWrapper = styled.div.attrs(
     view === 'list' &&
     `
       > div > ${ModalButton} {
+        padding: 1rem;
+
+        > div {
+         justify-content: center;
+         text-align: center;
+        }
         > img, 
         > svg {
           height: 100%;
@@ -347,6 +353,19 @@ export const WalletsWrapper = styled.div.attrs(
           > ${RecommendedLabelWrapper} {
             display: none;
           }
+        }
+      }
+  `}
+
+  ${({ view }) =>
+    view === 'list' &&
+    upToExtraSmall`
+      > div > ${ModalButton} {
+        padding: 1rem;
+        gap: 1.2rem;
+        > div {
+          justify-content: flex-start;
+          text-align: center; 
         }
       }
   `}

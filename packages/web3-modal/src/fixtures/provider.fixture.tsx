@@ -6,7 +6,7 @@ import { config } from 'dotenv'
 import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Address, http, parseEther } from 'viem'
-import { mainnet, polygon, sepolia } from 'viem/chains'
+import { mainnet, polygon, polygonAmoy, sepolia } from 'viem/chains'
 import { ConnectorNotFoundError, useBalance, useSendTransaction } from 'wagmi'
 import { injected } from 'wagmi/connectors'
 
@@ -23,7 +23,6 @@ import {
 } from '../hooks/api/useTransactions'
 import { PstlW3Providers } from '../providers'
 import { createTheme } from '../theme'
-import { amoy } from './chains'
 import { COMMON_CONNECTOR_OVERRIDES, DEFAULT_PROPS, DEFAULT_PROPS_WEB3AUTH, pstlModalTheme } from './config'
 import { INJECTED_CONNECTORS, wagmiConnectors } from './connectorsAndPlugins'
 
@@ -798,7 +797,7 @@ export default {
         <Web3Button />
         <button onClick={() => limitChains([mainnet])}>Limit chains to just MAINNET</button>
         <button onClick={() => limitChains([sepolia])}>Limit chains to just SEPOLIA</button>
-        <button onClick={() => limitChains([amoy])}>Limit chains to just AMOY</button>
+        <button onClick={() => limitChains([polygonAmoy])}>Limit chains to just AMOY</button>
       </PstlW3Providers>
     )
   }),

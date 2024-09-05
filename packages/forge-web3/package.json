@@ -1,10 +1,8 @@
 {
   "name": "@past3lle/forge-web3",
   "sideEffects": false,
-  "version": "2.3.0",
+  "version": "2.3.1-alpha.1",
   "description": "PAST3LLE FORGE Web3 hooks and tings",
-  "typings": "dist/types/index.d.ts",
-  "types": "dist/types/index.d.ts",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "exports": {
@@ -12,6 +10,11 @@
     "import": "./dist/esm/index.js",
     "types": "./dist/types/index.d.ts"
   },
+  "typings": "dist/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "directory": "packages/forge-web3",
@@ -29,15 +32,12 @@
   "author": "pastelle",
   "homepage": "https://github.com/past3lle/monorepo/tree/main/packages/forge-web3#readme",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "pack": "yarn pack",
     "check-types": "npx tsc --noEmit",
     "clean": "rm -rf dist && rm -rf tsconfig.tsbuildinfo",
     "compile:tsdx": "tsdx build --transpileOnly && cp \"./package.json\" ./dist/",
-    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' & tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && cp \"./package.json\" ./dist/",
+    "compile": "tsc --emitDeclarationOnly --outDir './dist/types' && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json && cp \"./package.json\" ./dist/",
     "cosmos": "cosmos",
     "build": "yarn clean && yarn compile",
     "build:tsdx": "yarn clean && yarn compile:tsdx",
@@ -66,27 +66,18 @@
   "bugs": {
     "url": "https://github.com/PAST3LLE/past3lle-monorepo/issues"
   },
-  "resolutions": {
-    "@wagmi/core": ">2 < 3",
-    "**/*/@wagmi/core": ">2 < 3",
-    "**/*/@tanstack/react-query": "^5.x",
-    "**/*/viem": "^2.x",
-    "viem": "^2.x",
-    "**/*/wagmi": "^2.x",
-    "wagmi": "^2.x"
-  },
   "peerDependencies": {
     "@tanstack/react-query": "^5.x",
     "react": ">=16",
     "styled-components": ">=5",
-    "viem": "^2.x",
-    "wagmi": "^2.x"
+    "viem": ">=2.10.0 <3",
+    "wagmi": ">=2.5.5 < 3"
   },
   "dependencies": {
-    "@past3lle/hooks": "^2.1.0",
+    "@past3lle/hooks": "^2.1.1-alpha.0",
     "@past3lle/skilltree-contracts": "^0.1.8",
     "@past3lle/utils": "^2.1.0",
-    "@past3lle/web3-modal": "^2.3.0",
+    "@past3lle/web3-modal": "^2.3.1-alpha.1",
     "jotai": "^2.6.0",
     "jotai-optics": "^0.3.1",
     "optics-ts": "^2.4.1"
@@ -101,8 +92,15 @@
     "react-cosmos": "^5.7.2",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6",
-    "viem": "^2.3.1",
-    "wagmi": "^2.2.1"
+    "viem": "^2.21.1",
+    "wagmi": "^2.12.8"
+  },
+  "resolutions": {
+    "**/*/@tanstack/react-query": "^5.x",
+    "**/*/viem": ">=2.10.0 < 3",
+    "viem": ">=2.10.0 < 3",
+    "**/*/wagmi": ">=2.5.5 < 3",
+    "wagmi": ">=2.5.5 < 3"
   },
   "browserslist": {
     "production": [

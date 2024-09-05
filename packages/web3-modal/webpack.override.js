@@ -14,9 +14,7 @@ module.exports = (webpackConfig) => (
             new webpack.DefinePlugin({
                 "process.env.IS_COSMOS": JSON.stringify(process.env.IS_COSMOS),
                 "process.env.REACT_APP_INFURA_ID": JSON.stringify(process.env.REACT_APP_INFURA_ID),
-                'process.env.REACT_APP_ALCHEMY_GOERLI_API_KEY': JSON.stringify(process.env.REACT_APP_ALCHEMY_GOERLI_API_KEY || ''),
-                'process.env.REACT_APP_ALCHEMY_MATIC_API_KEY': JSON.stringify(process.env.REACT_APP_ALCHEMY_MATIC_API_KEY || ''),
-                'process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY': JSON.stringify(process.env.REACT_APP_ALCHEMY_MUMBAI_API_KEY || ''),
+                'process.env.REACT_APP_ALCHEMY_API_KEY': JSON.stringify(process.env.REACT_APP_ALCHEMY_API_KEY || ''),
                 'process.env.REACT_APP_WEB3AUTH_DEVNET_CLIENT_ID': JSON.stringify(process.env.REACT_APP_WEB3AUTH_DEVNET_CLIENT_ID),
                 'process.env.REACT_APP_WEB3AUTH_PRODUCTION_CLIENT_ID': JSON.stringify(process.env.REACT_APP_WEB3AUTH_PRODUCTION_CLIENT_ID)
             }),
@@ -59,6 +57,7 @@ module.exports = (webpackConfig) => (
                 os: require.resolve("os-browserify"),
                 path: require.resolve("path-browserify"),
                 url: require.resolve("url"),
+                vm: require.resolve("vm-browserify"),
                 zlib: require.resolve("browserify-zlib"),
             },
         },

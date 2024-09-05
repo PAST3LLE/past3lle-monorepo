@@ -74,7 +74,7 @@ export function ModalWithoutThemeProvider(baseProps: Omit<StatelessBaseModalProp
         const modalProps: StatelessBaseModalProps = {
           ...baseProps,
           title: baseProps?.headers?.account || 'ACCOUNT',
-          width: '650px',
+          width: MODAL_SIZES.GRID_WIDTH,
           maxWidth: 'unset',
           maxHeight: 'unset',
           height: 'auto',
@@ -90,7 +90,7 @@ export function ModalWithoutThemeProvider(baseProps: Omit<StatelessBaseModalProp
         const modalProps: StatelessBaseModalProps = {
           ...baseProps,
           title: baseProps?.headers?.networks || 'NETWORK',
-          width: '650px',
+          width: MODAL_SIZES.GRID_WIDTH,
           maxWidth: '80vw',
           minHeight: '350px',
           maxHeight: '80vh',
@@ -106,7 +106,7 @@ export function ModalWithoutThemeProvider(baseProps: Omit<StatelessBaseModalProp
         const modalProps: StatelessBaseModalProps = {
           ...baseProps,
           title: 'HID DEVICE OPTIONS',
-          width: '650px',
+          width: MODAL_SIZES.GRID_WIDTH,
           maxWidth: '80vw',
           maxHeight: '80vh',
           height: 'auto',
@@ -121,7 +121,7 @@ export function ModalWithoutThemeProvider(baseProps: Omit<StatelessBaseModalProp
         const modalProps: StatelessBaseModalProps = {
           ...baseProps,
           title: 'Select configuration type',
-          width: '650px',
+          width: MODAL_SIZES.GRID_WIDTH,
           maxWidth: '80vw',
           // minHeight: '350px',
           maxHeight: '80vh',
@@ -161,7 +161,7 @@ export function ModalWithoutThemeProvider(baseProps: Omit<StatelessBaseModalProp
         const modalProps: StatelessBaseModalProps = {
           ...baseProps,
           title: 'TRANSACTIONS',
-          width: '650px',
+          width: MODAL_SIZES.GRID_WIDTH,
           maxWidth: '95vw',
           minHeight: '70%',
           id: ModalId.TRANSACTIONS,

@@ -21,6 +21,7 @@ module.exports = {
         http: require.resolve('stream-http'),
         os: require.resolve('os-browserify'),
         url: require.resolve('url'),
+        vm: require.resolve("vm-browserify"),
         zlib: require.resolve('browserify-zlib')
       })
       config.resolve.fallback = fallback

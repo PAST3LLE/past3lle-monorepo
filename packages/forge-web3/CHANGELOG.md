@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1-alpha.1](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.3.1-alpha.0...@past3lle/forge-web3@2.3.1-alpha.1) (2024-09-04)
+
+
+### Bug Fixes
+
+* **skillforge-ui:** update skillforge-ui imports and update root yarn lock ([#101](https://github.com/PAST3LLE/monorepo/issues/101)) ([d4d714a](https://github.com/PAST3LLE/monorepo/commit/d4d714a45c9b9a18b870e218f2b5b4d70c34b744))
+
+
+
+
+
+## [2.3.1-alpha.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.3.0...@past3lle/forge-web3@2.3.1-alpha.0) (2024-09-03)
+
+
+### Bug Fixes
+
+* **wagmi-connectors,web3-modal,forge-web3,skillforge-widget,skillforge-ui:** Update wagmi/viem/react-query versions and fix issues ([#100](https://github.com/PAST3LLE/monorepo/issues/100)) ([44dac72](https://github.com/PAST3LLE/monorepo/commit/44dac7223e5d78a0b17bc6ad82c5c21507e39a19))
+
+
+
+
+
 # [2.3.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/forge-web3@2.3.0-alpha.0...@past3lle/forge-web3@2.3.0) (2024-08-28)
 
 **Note:** Version bump only for package @past3lle/forge-web3
