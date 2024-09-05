@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.1-alpha.1...@past3lle/web3-modal@2.3.1) (2024-09-05)
+
+**Note:** Version bump only for package @past3lle/web3-modal
+
+
+
+
+
 ## [2.3.1-alpha.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.1-alpha.0...@past3lle/web3-modal@2.3.1-alpha.1) (2024-09-04)
 
 
