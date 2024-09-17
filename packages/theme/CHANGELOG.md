@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2-alpha.0](https://github.com/PAST3LLE/schematics-monorepo/compare/@past3lle/theme@2.1.1...@past3lle/theme@2.1.2-alpha.0) (2024-09-17)
+
+
+### Bug Fixes
+
+* **theme:** allow passing of wcag options in contrast fn ([#105](https://github.com/PAST3LLE/schematics-monorepo/issues/105)) ([939cb69](https://github.com/PAST3LLE/schematics-monorepo/commit/939cb696b3c359384b77331b34a510a658c67d37))
+
+
+
+
+
 ## [2.1.1](https://github.com/PAST3LLE/schematics-monorepo/compare/@past3lle/theme@2.1.1-alpha.0...@past3lle/theme@2.1.1) (2024-09-05)
 
 **Note:** Version bump only for package @past3lle/theme

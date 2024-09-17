@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2-alpha.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel-hooks@2.1.1...@past3lle/carousel-hooks@2.1.2-alpha.0) (2024-09-17)
+
+**Note:** Version bump only for package @past3lle/carousel-hooks
+
+
+
+
+
 ## [2.1.1](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel-hooks@2.1.1-alpha.0...@past3lle/carousel-hooks@2.1.1) (2024-09-05)
 
 **Note:** Version bump only for package @past3lle/carousel-hooks
