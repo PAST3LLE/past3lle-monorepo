@@ -98,7 +98,7 @@ export default function ButtonCarousel<D extends any[]>({
             onPrev={onPrevious}
             onNext={onNext}
           >
-            {children({ index, defaultImageTransforms, isLast: index === length - 1 })}
+            {children({ index, defaultImageTransforms, isLast: index === data.length - 1 })}
           </CarouselItem>
         )
       })}
