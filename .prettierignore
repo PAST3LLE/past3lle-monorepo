@@ -3,6 +3,7 @@
 .DS_Store
 
 node_modules
+.yarn
 
 .parcel-cache
 .cache
@@ -27,6 +28,7 @@ tsconfig.json
 tsconfig.*.json
 tsconfig.tsbuildinfo
 version.json
+*.gz
 
 .eslintrc.json
 
