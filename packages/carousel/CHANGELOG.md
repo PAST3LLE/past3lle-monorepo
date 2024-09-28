@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2-alpha.2](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.2-alpha.1...@past3lle/carousel@2.1.2-alpha.2) (2024-09-28)
+
+
+### Bug Fixes
+
+* **carousel:** fix broken comment and workflows ([bdf7786](https://github.com/PAST3LLE/monorepo/commit/bdf77868f4f247c26788179999ca415dbe5f4fec))
+
+
+
+
+
 ## [2.1.2-alpha.1](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.2-alpha.0...@past3lle/carousel@2.1.2-alpha.1) (2024-09-28)
 
 

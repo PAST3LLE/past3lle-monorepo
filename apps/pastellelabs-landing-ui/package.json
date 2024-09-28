@@ -14,7 +14,7 @@
     "url": "git+https://github.com/PAST3LLE/past3lle-monorepo.git"
   },
   "private": true,
-  "version": "0.4.2-alpha.1",
+  "version": "0.4.2-alpha.2",
   "engines": {
     "node": "^18.8 || >=20"
   },
@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@past3lle/assets": "^2.1.0",
-    "@past3lle/carousel": "^2.1.2-alpha.1",
+    "@past3lle/carousel": "^2.1.2-alpha.2",
     "@past3lle/components": "^2.1.2-alpha.0",
     "@past3lle/constants": "^2.1.0",
     "@past3lle/hooks": "^2.1.2-alpha.0",
