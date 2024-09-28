@@ -110,11 +110,8 @@
     "wagmi": ">=2.5.5 < 3"
   },
   "resolutions": {
-    "**/*/@tanstack/react-query": "^5.x",
     "@tanstack/react-query": "^5.x",
-    "**/*/viem": ">=2.10.0 < 3",
     "viem": ">=2.10.0 < 3",
-    "**/*/wagmi": ">=2.5.5 < 3",
     "wagmi": ">=2.5.5 < 3",
     "styled-components": "^5.x"
   },
