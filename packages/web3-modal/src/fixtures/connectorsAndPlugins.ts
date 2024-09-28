@@ -61,7 +61,7 @@ export const INJECTED_CONNECTORS = [
           if (IS_SERVER) return undefined
           try {
             const provider = window?.tally
-            if (!provider) devWarn('Connector', 'Taho' || 'unknown', 'not found!')
+            if (!provider) devWarn('Connector', 'Taho', 'not found!')
             return provider
           } catch (error) {
             return undefined

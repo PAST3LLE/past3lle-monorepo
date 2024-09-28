@@ -14,4 +14,5 @@ coverage
 /example/gatsby-example/
 /example/.parcel-cache
 /example/.cache
-*.tgz
+.yarn/*
+!.yarn/releases

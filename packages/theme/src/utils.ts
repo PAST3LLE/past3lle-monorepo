@@ -1,5 +1,5 @@
 import { DDPXImageUrlMap, GenericImageSrcSet } from '@past3lle/types'
-import contrast from 'get-contrast'
+import { score as getScore, ratio } from 'get-contrast'
 import { darken, lighten, transparentize } from 'polished'
 import { CSSObject, DefaultTheme, SimpleInterpolation, css } from 'styled-components'
 
@@ -72,11 +72,15 @@ export const betweenSmallAndLarge = whenMediaBetween('betweenSmallAndLarge')
 const IMG_SET_SIZE_ENTRIES = Object.entries(MEDIA_WIDTHS).reverse()
 type UpToSizeKey = keyof typeof MEDIA_WIDTHS
 
-type CheckHexColourContrastParams = { bgColour: Color; fgColour: Color }
+type CheckHexColourContrastParams = { bgColour: Color; fgColour: Color; options: ContrastCheckOptions }
 
-export function checkHexColourContrast({ bgColour, fgColour }: CheckHexColourContrastParams): [number, string] {
-  const score: number = contrast.ratio(bgColour, fgColour)
-  const rating: string = contrast.score(bgColour, fgColour)
+export function checkHexColourContrast({
+  bgColour,
+  fgColour,
+  options
+}: CheckHexColourContrastParams): [number, string] {
+  const score: number = ratio(bgColour, fgColour, { ignoreAlpha: !!options?.ignoreAlpha })
+  const rating: string = getScore(bgColour, fgColour, { ignoreAlpha: !!options?.ignoreAlpha })
 
   return [score, rating]
 }
@@ -87,16 +91,18 @@ type BestContrastingColourParams = CheckHexColourContrastParams & {
 }
 type PossiblePassingContrastRatingThresholds = 'AAA' | 'AA' | 'A'
 type ContrastCheckOptions = {
+  ignoreAlpha?: boolean
   threshold: number | PossiblePassingContrastRatingThresholds[]
 }
 
 export function setBestContrastingColour(
-  { bgColour, fgColour, lightColour, darkColour }: BestContrastingColourParams,
-  options: ContrastCheckOptions = { threshold: ['AA'] }
+  { bgColour, fgColour, lightColour, darkColour }: Omit<BestContrastingColourParams, 'options'>,
+  options: ContrastCheckOptions = { ignoreAlpha: false, threshold: ['AA'] }
 ): string {
   const [contrastScore, contrastRating] = checkHexColourContrast({
     bgColour,
-    fgColour
+    fgColour,
+    options
   })
 
   const passesThreshold =
@@ -235,7 +241,11 @@ type BackgroundWithDPIProps = Partial<Omit<SetCssBackgroundParams, 'isLogo' | 'i
   modeColours?: [string, string]
 }
 
-export function setBestTextColour(bgColor: Color, threshold: ContrastCheckOptions['threshold'] = ['AA']) {
+export function setBestTextColour(
+  bgColor: Color,
+  threshold: ContrastCheckOptions['threshold'] = ['AA'],
+  ignoreAlpha = false
+) {
   return setBestContrastingColour(
     {
       bgColour: bgColor,
@@ -243,7 +253,7 @@ export function setBestTextColour(bgColor: Color, threshold: ContrastCheckOption
       darkColour: BLACK,
       lightColour: OFF_WHITE
     },
-    { threshold }
+    { threshold, ignoreAlpha }
   )
 }
 

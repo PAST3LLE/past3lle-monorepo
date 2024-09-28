@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2-alpha.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.2-alpha.0...@past3lle/web3-modal@2.3.2-alpha.1) (2024-09-28)
+
+
+### Bug Fixes
+
+* **carousel:** fix `@past3lle/carousel` type bug ([#106](https://github.com/PAST3LLE/past3lle-monorepo/issues/106)) ([3106674](https://github.com/PAST3LLE/past3lle-monorepo/commit/31066741cc44e10657a5d7adc8a074bb97823285))
+
+
+
+
+
+## [2.3.2-alpha.0](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.1...@past3lle/web3-modal@2.3.2-alpha.0) (2024-09-17)
+
+**Note:** Version bump only for package @past3lle/web3-modal
+
+
+
+
+
 ## [2.3.1](https://github.com/PAST3LLE/past3lle-monorepo/compare/@past3lle/web3-modal@2.3.1-alpha.1...@past3lle/web3-modal@2.3.1) (2024-09-05)
 
 **Note:** Version bump only for package @past3lle/web3-modal

@@ -1,6 +1,6 @@
 {
   "name": "@past3lle/web3-modal",
-  "version": "2.3.1",
+  "version": "2.3.2-alpha.1",
   "sideEffects": false,
   "description": "PAST3LLE's Web3 connection modal",
   "keywords": [
@@ -77,11 +77,11 @@
     "wagmi": ">=2.5.5 < 3"
   },
   "dependencies": {
-    "@past3lle/components": "^2.1.1",
-    "@past3lle/hooks": "^2.1.1",
-    "@past3lle/theme": "^2.1.1",
+    "@past3lle/components": "^2.1.2-alpha.0",
+    "@past3lle/hooks": "^2.1.2-alpha.0",
+    "@past3lle/theme": "^2.1.2-alpha.0",
     "@past3lle/utils": "^2.1.0",
-    "@past3lle/wagmi-connectors": "^2.3.1",
+    "@past3lle/wagmi-connectors": "^2.3.2-alpha.1",
     "@safe-global/api-kit": "^2.4.5",
     "@safe-global/safe-apps-sdk": "^9.1.0",
     "date-fns": "^3.0.0",
@@ -110,11 +110,8 @@
     "wagmi": ">=2.5.5 < 3"
   },
   "resolutions": {
-    "**/*/@tanstack/react-query": "^5.x",
     "@tanstack/react-query": "^5.x",
-    "**/*/viem": ">=2.10.0 < 3",
     "viem": ">=2.10.0 < 3",
-    "**/*/wagmi": ">=2.5.5 < 3",
     "wagmi": ">=2.5.5 < 3",
     "styled-components": "^5.x"
   },

@@ -1,7 +1,7 @@
 {
   "name": "@past3lle/forge-web3",
   "sideEffects": false,
-  "version": "2.3.1",
+  "version": "2.3.2-alpha.1",
   "description": "PAST3LLE FORGE Web3 hooks and tings",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -74,10 +74,10 @@
     "wagmi": ">=2.5.5 < 3"
   },
   "dependencies": {
-    "@past3lle/hooks": "^2.1.1",
+    "@past3lle/hooks": "^2.1.2-alpha.0",
     "@past3lle/skilltree-contracts": "^0.1.8",
     "@past3lle/utils": "^2.1.0",
-    "@past3lle/web3-modal": "^2.3.1",
+    "@past3lle/web3-modal": "^2.3.2-alpha.1",
     "jotai": "^2.6.0",
     "jotai-optics": "^0.3.1",
     "optics-ts": "^2.4.1"
@@ -96,10 +96,7 @@
     "wagmi": "^2.12.8"
   },
   "resolutions": {
-    "**/*/@tanstack/react-query": "^5.x",
-    "**/*/viem": ">=2.10.0 < 3",
     "viem": ">=2.10.0 < 3",
-    "**/*/wagmi": ">=2.5.5 < 3",
     "wagmi": ">=2.5.5 < 3"
   },
   "browserslist": {

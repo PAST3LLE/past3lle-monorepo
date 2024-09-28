@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2-alpha.3](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.2-alpha.2...@past3lle/carousel@2.1.2-alpha.3) (2024-09-28)
+
+
+### Bug Fixes
+
+* **carousel:** fix carousel style bugs and root: migrate back to V1 Yarn ([#108](https://github.com/PAST3LLE/monorepo/issues/108)) ([40d0fa9](https://github.com/PAST3LLE/monorepo/commit/40d0fa9b0af80e8f3984d4a3b532a6508d0edbc1))
+
+
+
+
+
+## [2.1.2-alpha.2](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.2-alpha.1...@past3lle/carousel@2.1.2-alpha.2) (2024-09-28)
+
+
+### Bug Fixes
+
+* **carousel:** fix broken comment and workflows ([bdf7786](https://github.com/PAST3LLE/monorepo/commit/bdf77868f4f247c26788179999ca415dbe5f4fec))
+
+
+
+
+
+## [2.1.2-alpha.1](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.2-alpha.0...@past3lle/carousel@2.1.2-alpha.1) (2024-09-28)
+
+
+### Bug Fixes
+
+* **carousel:** fix `@past3lle/carousel` type bug ([#106](https://github.com/PAST3LLE/monorepo/issues/106)) ([3106674](https://github.com/PAST3LLE/monorepo/commit/31066741cc44e10657a5d7adc8a074bb97823285))
+
+
+
+
+
+## [2.1.2-alpha.0](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.1...@past3lle/carousel@2.1.2-alpha.0) (2024-09-17)
+
+**Note:** Version bump only for package @past3lle/carousel
+
+
+
+
+
 ## [2.1.1](https://github.com/PAST3LLE/monorepo/compare/@past3lle/carousel@2.1.1-alpha.0...@past3lle/carousel@2.1.1) (2024-09-05)
 
 **Note:** Version bump only for package @past3lle/carousel
