@@ -29,8 +29,6 @@ export const CarouselItemContainer = styled(BaseCarouselStep)<{
   $transformAmount: number
 }>`
   transform: ${({ $transformAmount }) => `translateX(${$transformAmount}px)`};
-
-  // transform one differently than the others
   transition: ${({ $transformAmount }) =>
     $transformAmount > 0 ? 'transform 1s ease-in-out;' : 'transform 0.7s ease-out'};
 
