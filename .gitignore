@@ -15,3 +15,4 @@ coverage
 /example/.parcel-cache
 /example/.cache
 *.tgz
+.yarn/*
