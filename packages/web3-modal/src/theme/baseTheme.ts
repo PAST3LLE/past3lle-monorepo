@@ -170,7 +170,7 @@ export const PstlModalTheme: ThemeByModes<PstlModalThemeExtension> = {
             font: {
               color: 'ghostwhite'
             },
-            background: 'black' || '#000000de'
+            background: 'black' // was --> || '#000000de'
           },
           helpers: {
             show: true,

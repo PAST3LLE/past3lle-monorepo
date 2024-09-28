@@ -28,7 +28,7 @@ export function useTimeoutClearingError(
   }, [error, time])
 
   const resetError = useCallback(() => {
-    clearTimeout(timeout)
+    if (timeout) clearTimeout(timeout)
     setShowError(false)
     callback?.(null)
     // eslint-disable-next-line react-hooks/exhaustive-deps
