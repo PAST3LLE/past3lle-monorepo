@@ -96,7 +96,6 @@ export const CarouselContainer = styled(ScrollerContainer).attrs({ $isVerticalSc
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  // transform requirement
   position: relative;
   overflow: hidden;
   height: 100%;

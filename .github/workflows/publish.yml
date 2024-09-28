@@ -22,7 +22,7 @@ jobs:
             clean: true
 
         - name: Install dependencies
-          run: yarn install
+          run: yarn install --frozen-workfile
 
         - name: Build packages
           # skip building apps
