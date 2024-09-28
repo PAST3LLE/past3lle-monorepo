@@ -22,7 +22,7 @@ jobs:
             clean: true
 
         - name: Install dependencies
-          run: yarn install --immutable
+          run: yarn install --frozen-lockfile
 
         - name: Build packages
           # skip building apps
