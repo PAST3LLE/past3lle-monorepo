@@ -1,7 +1,7 @@
 {
   "name": "@past3lle/wagmi-connectors",
   "sideEffects": false,
-  "version": "2.3.2-alpha.1",
+  "version": "2.3.2",
   "description": "Past3lle enhanced V2 Wagmi connectors",
   "keywords": [
     "web3",
@@ -124,7 +124,7 @@
   },
   "devDependencies": {
     "@ledgerhq/types-live": "6.43.1",
-    "@past3lle/theme": "^2.1.2-alpha.0",
+    "@past3lle/theme": "^2.1.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.2.1",
     "@rollup/plugin-typescript": "^11.1.3",

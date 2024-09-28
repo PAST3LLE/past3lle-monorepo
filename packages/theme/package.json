@@ -1,7 +1,7 @@
 {
   "name": "@past3lle/theme",
   "sideEffects": false,
-  "version": "2.1.2-alpha.0",
+  "version": "2.1.2",
   "description": "common theme parts",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
