@@ -66,7 +66,7 @@ export function ActiveSkillPanel() {
       deps: activeSkill?.properties?.dependencies || [],
       get cardColour() {
         return isLocked
-          ? 'black' || baseTheme.gradients.lockedSkill
+          ? baseTheme.gradients.lockedSkill || BLACK
           : this.rarity
           ? baseTheme.gradients.unlockedSkill + `${customTheme.rarity[this.rarity].backgroundColor})`
           : null
